@@ -15,8 +15,8 @@
         <copyright>Copyright © 2018 mdoc developers</copyright>
         <item>
             <title><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
-            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</link>
-            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</guid>
+            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html</link>
+            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html</guid>
             <pubDate>Sat, 29 Dec 2018 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good
 performance while reporting clear error messages. mdoc is a markdown

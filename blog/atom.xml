@@ -10,8 +10,8 @@
     <rights>Copyright © 2018 mdoc developers</rights>
     <entry>
         <title type="html"><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
-        <id>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</id>
-        <link href="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html">
+        <id>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html</id>
+        <link href="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html">
         </link>
         <updated>2018-12-29T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good
