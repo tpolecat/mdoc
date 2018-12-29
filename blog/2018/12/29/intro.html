@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Fast typechecked markdown documentation with clear error messages · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This post introduces how mdoc, a markdown documentation tool inspired by"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Fast typechecked markdown documentation with clear error messages · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html"/><meta property="og:description" content="This post introduces how mdoc, a markdown documentation tool inspired by"/><meta property="og:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><link rel="shortcut icon" href="/mdoc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"/><link rel="alternate" type="application/atom+xml" href="https://olafurpg.github.io/mdoc/mdoc/blog/atom.xml" title="mdoc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://olafurpg.github.io/mdoc/mdoc/blog/feed.xml" title="mdoc Blog RSS Feed"/><link rel="stylesheet" href="/mdoc/css/custom.css"/><link rel="stylesheet" href="/mdoc/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mdoc/"><img class="logo" src="/mdoc/img/mdoc-logo.png" alt="mdoc"/><h2 class="headerTitleWithLogo">mdoc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mdoc/docs/installation.html" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mdoc/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/mdoc/blog/2018/12/29/intro.html">Fast typechecked markdown documentation with clear error messages</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Fast typechecked markdown documentation with clear error messages · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This post introduces how mdoc evaluates Scala code examples with good"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Fast typechecked markdown documentation with clear error messages · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html"/><meta property="og:description" content="This post introduces how mdoc evaluates Scala code examples with good"/><meta property="og:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><link rel="shortcut icon" href="/mdoc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"/><link rel="alternate" type="application/atom+xml" href="https://olafurpg.github.io/mdoc/mdoc/blog/atom.xml" title="mdoc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://olafurpg.github.io/mdoc/mdoc/blog/feed.xml" title="mdoc Blog RSS Feed"/><link rel="stylesheet" href="/mdoc/css/custom.css"/><link rel="stylesheet" href="/mdoc/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mdoc/"><img class="logo" src="/mdoc/img/mdoc-logo.png" alt="mdoc"/><h2 class="headerTitleWithLogo">mdoc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/mdoc/docs/installation.html" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/mdoc/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/mdoc/blog/2018/12/29/intro.html">Fast typechecked markdown documentation with clear error messages</a></li></ul></div></div></section></div><script>
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -25,15 +25,14 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/mdoc/blog/2018/12/29/intro.html">Fast typechecked markdown documentation with clear error messages</a></h1><p class="post-meta">December 29, 2018</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/olafurpg" target="_blank" rel="noreferrer noopener">Ólafur Páll Geirsson</a></p><div class="authorPhoto"><a href="https://twitter.com/olafurpg" target="_blank" rel="noreferrer noopener"><img src="https://avatars2.githubusercontent.com/u/1408093?s=460&amp;v=4" alt="Ólafur Páll Geirsson"/></a></div></div></header><div><span><p>This post introduces how mdoc, a markdown documentation tool inspired by
-<a href="http://tpolecat.github.io/tut/">tut</a>, evaluates Scala code examples with good
-performance while keeping clear error messages.</p>
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/mdoc/blog/2018/12/29/intro.html">Fast typechecked markdown documentation with clear error messages</a></h1><p class="post-meta">December 29, 2018</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/olafurpg" target="_blank" rel="noreferrer noopener">Ólafur Páll Geirsson</a></p><div class="authorPhoto"><a href="https://twitter.com/olafurpg" target="_blank" rel="noreferrer noopener"><img src="https://avatars2.githubusercontent.com/u/1408093?s=460&amp;v=4" alt="Ólafur Páll Geirsson"/></a></div></div></header><div><span><p>This post introduces how mdoc evaluates Scala code examples with good
+performance while reporting clear error messages. mdoc is a markdown
+documentation tool inspired by <a href="http://tpolecat.github.io/tut/">tut</a>.</p>
 <p>Like tut, mdoc reads markdown files as input and produces markdown files as
-output with the Scala code examples typechecked and evaluated. Unlike tut, mdoc
-does not use the Scala REPL to evaluate Scala code examples. Instead, mdoc
-translates each markdown file into a regular Scala program that evaluates in one
-run. We evaluate mdoc on a real-world project to show that the approach used by
-mdoc provides up to 10x faster documentation generation.</p>
+output with the Scala code examples evaluated. Unlike tut, mdoc does not use the
+Scala REPL to evaluate Scala code examples. Instead, mdoc translates each
+markdown file into a regular Scala program that evaluates in one run. In this
+post, we learn how this approach delivers improved performance.</p>
 <!-- truncate -->
 <h2><a class="anchor" aria-hidden="true" id="repl-semantics"></a><a href="#repl-semantics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>REPL semantics</h2>
 <p>It's not possible to write companion objects or overloaded methods with tut.
@@ -48,9 +47,8 @@ warning: previously defined <span class="hljs-class"><span class="hljs-keyword">
 <span class="hljs-type">Companions</span> must be defined together; you may wish to use :paste mode <span class="hljs-keyword">for</span> <span class="hljs-keyword">this</span>.
 </code></pre>
 <p>The warning may be surprising if you are not familiar with how the REPL works.
-In the REPL, each statements gets translated into a member of a synthetic
-object. We can look at the generated code by adding the compiler option
-<code>-Xprint:parser</code>.</p>
+In the REPL, each statements gets wrapped into a synthetic object. We can look
+at the generated code by adding the compiler option <code>-Xprint:parser</code>.</p>
 <pre><code class="hljs css language-scala">$ scala -<span class="hljs-type">Xprint</span>:parser
 scala&gt; <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span>(<span class="hljs-params">name: <span class="hljs-type">String</span></span>)</span>
 <span class="hljs-keyword">package</span> $line3 {
@@ -64,15 +62,14 @@ scala&gt; <span class="hljs-class"><span class="hljs-keyword">object</span> <spa
 }
 </code></pre>
 <p>It's not possible for <code>object User</code> to be a companion of <code>class User</code> because
-they're defined in separate objects <code>$line3</code> and <code>$line4</code>.</p>
-<p>Companion objects aside, compiling and classloading each individual statement
-through the REPL is slow. Even if the programs themselves are small and run
-fast, the overhead from compilation and classloading significantly adds up as
-the markdown document grows.</p>
+they're defined in separate objects <code>$line3</code> and <code>$line4</code>. This encoding is
+required for the REPL because we don't know ahead-of-time how many statements
+will get evaluated in the session.</p>
 <h2><a class="anchor" aria-hidden="true" id="program-semantics"></a><a href="#program-semantics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Program semantics</h2>
 <p>Instead of evaluating each statement individually like in the REPL, mdoc builds
-a single Scala program that evaluates in one run. For example, consider the
-following markdown document.</p>
+a single Scala program that evaluates in one run. The approach is possible
+because we know which statements appear in the document, unlike the REPL. For
+example, consider the following markdown document.</p>
 <pre><code class="hljs css language-md"><span class="hljs-code">```scala mdoc
 val x = 1
 ```</span>
@@ -161,8 +158,7 @@ compares tokens.</p>
 reported by the compiler should translate to positions in the original markdown
 source.</p>
 <h2><a class="anchor" aria-hidden="true" id="evaluation"></a><a href="#evaluation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Evaluation</h2>
-<p>Let's try out mdoc in a real-world project and see how it fares. To evaluate
-mdoc, we test it on the <a href="https://github.com/http4s/http4s">http4s</a>
+<p>Let's test mdoc by running it on the <a href="https://github.com/http4s/http4s">http4s</a>
 documentation. Http4s is a minimal, idiomatic Scala interface for HTTP.</p>
 <p><img src="https://user-images.githubusercontent.com/1408093/50538581-e1dbd000-0b71-11e9-830a-a958a5c75dce.png" alt="http4s GitHub respository"></p>
 <p>We start by cloning the http4s repository and install the sbt-mdoc plugin.</p>
@@ -194,8 +190,9 @@ error: docs/src/main/tut/client.md:<span class="hljs-number">274</span>:<span cl
     ^^^^^^^^^^^^^
 info: <span class="hljs-type">Compiled</span> in <span class="hljs-number">14.02</span>s (<span class="hljs-number">46</span> errors, <span class="hljs-number">36</span> warnings)
 </code></pre>
-<p>The compile errors are expected since mdoc uses program semantics instead of
-REPL semantics meaning it's not possible to define the same variable name twice.</p>
+<p>It's expected that there are compile errors because mdoc uses program semantics
+instead of REPL semantics. For example, in this particular example
+<code>meteredClient</code> was already defined in this document.</p>
 <p>We rename a few conflicting variables and comment out two ambiguous implicits.</p>
 <pre><code class="hljs css language-diff"><span class="hljs-deletion">-```tut</span>
 <span class="hljs-deletion">-val io = Ok(IO.fromFuture(IO(Future {</span>
@@ -207,14 +204,12 @@ REPL semantics meaning it's not possible to define the same variable name twice.
 <span class="hljs-deletion">-io.unsafeRunSync</span>
 <span class="hljs-addition">+io2.unsafeRunSync</span>
  ```
-<span class="hljs-deletion">-```tut:book</span>
 <span class="hljs-deletion">-implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =</span>
 <span class="hljs-deletion">-  QueryParamDecoder[Int].map(Year.of)</span>
-<span class="hljs-addition">+```scala mdoc</span>
 <span class="hljs-addition">+// implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =</span>
 <span class="hljs-addition">+//   QueryParamDecoder[Int].map(Year.of)</span>
 </code></pre>
-<p>We disable fatal warnings and run mdoc again but only for a single document
+<p>We disable fatal warnings and run mdoc again but only for the modified document
 <code>dsl.md</code>.</p>
 <pre><code class="hljs css language-scala">&gt; set scalacOptions in docs -= <span class="hljs-string">"-Xfatal-warnings"</span>
 &gt; docs/mdoc --include dsl.md --watch
@@ -225,7 +220,8 @@ info: <span class="hljs-type">Compiled</span> in <span class="hljs-number">9.74<
 <span class="hljs-type">Waiting</span> <span class="hljs-keyword">for</span> file changes (press enter to interrupt)
 </code></pre>
 <p>It took 10 seconds to evaluate the document for the first time. We insert
-a blank line and generate the document again, it takes 3.5 seconds this time.</p>
+a blank line and generate the document again and it only takes 3.5 seconds. It's
+faster the second time because the JVM has warmed up a bit.</p>
 <pre><code class="hljs css language-scala">info: <span class="hljs-type">Compiling</span> <span class="hljs-number">1</span> file to /<span class="hljs-type">Users</span>/olafurpg/dev/http4s/docs/target/mdoc
 info: <span class="hljs-type">Compiled</span> in <span class="hljs-number">3.53</span>s (<span class="hljs-number">0</span> errors)
 <span class="hljs-type">Waiting</span> <span class="hljs-keyword">for</span> file changes (press enter to interrupt)
@@ -240,8 +236,7 @@ info: <span class="hljs-type">Compiled</span> in <span class="hljs-number">2.39<
 <pre><code class="hljs css language-diff"><span class="hljs-deletion">- object OptionalYearQueryParamMatcher extends OptionalQueryParamDecoderMatcher[Year]("year")</span>
 <span class="hljs-addition">+ object OptionalYearQueryParamMatcher extends OptionalQueryParamDecoderMatcher[Int]("year")</span>
 </code></pre>
-<pre><code class="hljs">warning: discarded non-Unit value
-error: /Users/olafurpg/dev/http4s/docs/src/main/tut/dsl.md:449:41: error:<span class="hljs-built_in"> type </span>mismatch;
+<pre><code class="hljs">error: /Users/olafurpg/dev/http4s/docs/src/main/tut/dsl.md:449:41: error:<span class="hljs-built_in"> type </span>mismatch;
  found   : Int
  required: java.time.Year
         Ok(getAverageTemperatureForYear(year))
@@ -249,10 +244,10 @@ error: /Users/olafurpg/dev/http4s/docs/src/main/tut/dsl.md:449:41: error:<span c
 info: Compiled <span class="hljs-keyword">in</span> 0.82s (1 error, 1 warning)
 Waiting <span class="hljs-keyword">for</span> file changes (press enter <span class="hljs-keyword">to</span> interrupt)
 </code></pre>
-<p>Observe that the position point to line 449 and column 41 which is exactly where
-<code>year</code> is defined. In iTerm, you can cmd+click on the error to open your editor
-at that position. Observe that the &quot;warning: discarded non-Unit value&quot; message
-has no position so we can't tell where it comes from.</p>
+<p>Observe that the error is reported within one second, faster than it takes to
+process the document on success. The error message position points to line 449
+and column 41 which is exactly where <code>year</code> identifier is referenced. In iTerm,
+you can cmd+click on the error to open your editor at that position.</p>
 <p>We compare the performance with tut by checking out the master branch and run
 <code>docs/tutOnly dsl.md</code> four times.</p>
 <pre><code class="hljs css language-scala">&gt; docs/tutOnly dsl.md
@@ -276,45 +271,40 @@ has no position so we can't tell where it comes from.</p>
 <span class="hljs-comment">//                                                ^</span>
 [error] <span class="hljs-type">Total</span> time: <span class="hljs-number">22</span> s, completed <span class="hljs-type">Dec</span> <span class="hljs-number">29</span>, <span class="hljs-number">2018</span> <span class="hljs-number">2</span>:<span class="hljs-number">39</span>:<span class="hljs-number">42</span> <span class="hljs-type">PM</span>
 </code></pre>
-<p>Observe that the position point to line 458, which is the last line of the code
-fence where a closing <code>}</code> lies, but is not the line number where <code>year</code> is
-defined.</p>
+<p>Observe that it took 22 seconds to report the compile error. Also, the position
+points to line 458, which is the last line of the code fence containing the
+closing <code>}</code>, but it's is not the line where <code>year</code> is referenced.</p>
 <p>Some observations:</p>
 <ul>
-<li><p>it requires manual effort to translate documentation from REPL semantics to
+<li>it requires manual effort to translate documentation from REPL semantics to
 program semantics. The migration can't be automated and you sacrifice
-flexibility in how variables are named by using mdoc.</p></li>
-<li><p>for cold performance, mdoc takes 10 seconds while tut takes 21 seconds. This
-is likely caused by the difference between evaluating individual statements
-through the REPL instead of the entire markdown document as one program.</p></li>
-<li><p>for hot performance, mdoc takes 2.4 seconds while tut takes between 21 and 28
-seconds. With --watch mode, mdoc reuses the same compiler instance between
-runs it possible for the JVM to optimize the code. It is possible for tut to
-use the same trick to enjoy similar speedups.</p></li>
-<li><p>mdoc reports compile error that appear late in the document within 0.8 seconds
-with exact line and column positions of the original markdown document, while
-tut reports compile errors in 22 seconds with accurate but not exact line
-numbers. On the other hand, some messages like &quot;warning: discarded non-Unit
-value&quot; are reported by mdoc without position making it difficult to track down
-where the problem is.</p>
-<p>The big performance difference from reporting compile errors comes from the
-fact that the REPL needs to compile + classload all leading statements in the
-document while mdoc does not classload any expressions if the document
-contains a compile error.</p></li>
+flexibility in variable naming and implicits usage by migrating to mdoc.</li>
+<li>for cold performance, mdoc takes 10 seconds while tut takes 21 seconds. My
+theory is that the primary reason for this difference is REPL semantics vs.
+program semantics.</li>
+<li>for hot performance, mdoc takes 2.4 seconds while tut takes between 21 and 28
+seconds. Under <code>--watch</code> mode, mdoc reuses the same compiler instance between
+runs it possible for the JVM to optimize the code. I suspect tut can enjoy
+similar speedups by introducing a <code>--watch</code> mode.</li>
+<li>mdoc reports compile errors in 0.8 seconds with exact line and column
+positions of the original markdown document, while tut reports compile errors
+in 22 seconds with accurate but not exact line numbers. The big difference
+likely comes from the fact that the REPL needs to compile + classload all
+leading statements in the document to reach the compile error while mdoc has
+no bytecode to classload when the document contains a compile error.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="conclusion"></a><a href="#conclusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h2>
 <p>In this post, we learned the difference between REPL semantics used by tut and
-program semantics used by mdoc. Program semantics enables mdoc to process
-markdown documents up to 2x faster under cold compilation, and combined with
-<code>--watch</code> mode 10x faster under hot compilation.</p>
-<p>To report helpful error messages, mdoc uses a novel edit-distance technique to
-align tokens in the original markdown source with tokens in the instrumented
-program. This technique enables mdoc to generate instrumented code while
-reporting positions in the original markdown source.</p>
-<p>Migrating tut documentation that uses REPL semantics to mdoc documentation that
-uses program semantics requires manual effort. If you have a lot of
-documentation and want a tighter edit/preview feedback loop, the migration might
-be worth your effort.</p>
+program semantics used by mdoc. Program semantics enable mdoc to process
+markdown documents up to 2x faster under cold compilation, and 10x faster when
+combined with <code>--watch</code> mode under hot compilation.</p>
+<p>To report clear error messages, mdoc uses edit-distance to align tokens in the
+original markdown source with tokens in the instrumented program. This technique
+enables mdoc to generate instrumented code while reporting positions in the
+original markdown source.</p>
+<p>Migrating from REPL semantics to program semantics requires manual effort. If
+you have a lot of documentation and want a tighter edit/preview feedback loop,
+the migration might be worth your effort.</p>
 <p>Several projects already use mdoc: mdoc itself (this website),
 <a href="https://scalameta.org/scalafmt/">Scalafmt</a>,
 <a href="https://scalacenter.github.io/scalafix/">Scalafix</a>,

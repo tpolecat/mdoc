@@ -18,15 +18,14 @@
             <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</link>
             <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</guid>
             <pubDate>Sat, 29 Dec 2018 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>This post introduces how mdoc, a markdown documentation tool inspired by
-<a href="http://tpolecat.github.io/tut/">tut</a>, evaluates Scala code examples with good
-performance while keeping clear error messages.</p>
+            <description><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good
+performance while reporting clear error messages. mdoc is a markdown
+documentation tool inspired by <a href="http://tpolecat.github.io/tut/">tut</a>.</p>
 <p>Like tut, mdoc reads markdown files as input and produces markdown files as
-output with the Scala code examples typechecked and evaluated. Unlike tut, mdoc
-does not use the Scala REPL to evaluate Scala code examples. Instead, mdoc
-translates each markdown file into a regular Scala program that evaluates in one
-run. We evaluate mdoc on a real-world project to show that the approach used by
-mdoc provides up to 10x faster documentation generation.</p>
+output with the Scala code examples evaluated. Unlike tut, mdoc does not use the
+Scala REPL to evaluate Scala code examples. Instead, mdoc translates each
+markdown file into a regular Scala program that evaluates in one run. In this
+post, we learn how this approach delivers improved performance.</p>
 ]]></description>
         </item>
     </channel>
