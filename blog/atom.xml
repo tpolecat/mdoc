@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://olafurpg.github.io/mdoc/mdoc/blog</id>
+    <title>mdoc Blog</title>
+    <updated>2018-12-29T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://olafurpg.github.io/mdoc/mdoc/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest mdoc news and events.</subtitle>
+    <logo>https://olafurpg.github.io/mdoc/mdoc/img/mdoc-logo.png</logo>
+    <rights>Copyright © 2018 mdoc developers</rights>
+    <entry>
+        <title type="html"><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
+        <id>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</id>
+        <link href="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html">
+        </link>
+        <updated>2018-12-29T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>This post introduces how mdoc, a markdown documentation tool inspired by
+<a href="http://tpolecat.github.io/tut/">tut</a>, evaluates Scala code examples with good
+performance while keeping clear error messages.</p>
+<p>Like tut, mdoc reads markdown files as input and produces markdown files as
+output with the Scala code examples typechecked and evaluated. Unlike tut, mdoc
+does not use the Scala REPL to evaluate Scala code examples. Instead, mdoc
+translates each markdown file into a regular Scala program that evaluates in one
+run. We evaluate mdoc on a real-world project to show that the approach used by
+mdoc provides up to 10x faster documentation generation.</p>
+]]></summary>
+        <author>
+            <name>Ólafur Páll Geirsson</name>
+            <uri>https://twitter.com/olafurpg</uri>
+        </author>
+    </entry>
+</feed>

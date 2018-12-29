@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>mdoc Blog</title>
+        <link>https://olafurpg.github.io/mdoc/mdoc/blog</link>
+        <description>The best place to stay up-to-date with the latest mdoc news and events.</description>
+        <lastBuildDate>Sat, 29 Dec 2018 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>mdoc Blog</title>
+            <url>https://olafurpg.github.io/mdoc/mdoc/img/mdoc-logo.png</url>
+            <link>https://olafurpg.github.io/mdoc/mdoc/blog</link>
+        </image>
+        <copyright>Copyright © 2018 mdoc developers</copyright>
+        <item>
+            <title><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
+            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</link>
+            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/intro.html</guid>
+            <pubDate>Sat, 29 Dec 2018 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>This post introduces how mdoc, a markdown documentation tool inspired by
+<a href="http://tpolecat.github.io/tut/">tut</a>, evaluates Scala code examples with good
+performance while keeping clear error messages.</p>
+<p>Like tut, mdoc reads markdown files as input and produces markdown files as
+output with the Scala code examples typechecked and evaluated. Unlike tut, mdoc
+does not use the Scala REPL to evaluate Scala code examples. Instead, mdoc
+translates each markdown file into a regular Scala program that evaluates in one
+run. We evaluate mdoc on a real-world project to show that the approach used by
+mdoc provides up to 10x faster documentation generation.</p>
+]]></description>
+        </item>
+    </channel>
+</rss>
