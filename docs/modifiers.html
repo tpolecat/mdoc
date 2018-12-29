@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Modifiers · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;mdocs supports several modifiers to control the output of code fences.&lt;/p&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Modifiers · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://olafurpg.github.io/mdoc/mdoc/index.html"/><meta property="og:description" content="&lt;p&gt;mdocs supports several modifiers to control the output of code fences.&lt;/p&gt;
-"/><meta property="og:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><link rel="shortcut icon" href="/mdoc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"/><link rel="stylesheet" href="/mdoc/css/custom.css"/><link rel="stylesheet" href="/mdoc/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mdoc/"><img class="logo" src="/mdoc/img/mdoc-logo.png" alt="mdoc"/><h2 class="headerTitleWithLogo">mdoc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/mdoc/docs/installation.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Overview</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/mdoc/docs/installation.html">Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mdoc/docs/modifiers.html">Modifiers</a></li><li class="navListItem"><a class="navItem" href="/mdoc/docs/why.html">Why mdoc?</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Modifiers · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Code fences with &lt;code&gt;scala mdoc&lt;/code&gt; can have different &amp;quot;modifiers&amp;quot;, which control how&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Modifiers · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://olafurpg.github.io/mdoc/mdoc/index.html"/><meta property="og:description" content="&lt;p&gt;Code fences with &lt;code&gt;scala mdoc&lt;/code&gt; can have different &amp;quot;modifiers&amp;quot;, which control how&lt;/p&gt;
+"/><meta property="og:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://olafurpg.github.io/mdoc/mdoc/img/scalameta-logo.png"/><link rel="shortcut icon" href="/mdoc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"/><link rel="stylesheet" href="/mdoc/css/custom.css"/><link rel="stylesheet" href="/mdoc/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mdoc/"><img class="logo" src="/mdoc/img/mdoc-logo.png" alt="mdoc"/><h2 class="headerTitleWithLogo">mdoc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/mdoc/docs/installation.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Overview</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/mdoc/docs/installation.html">Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mdoc/docs/modifiers.html">Modifiers</a></li><li class="navListItem"><a class="navItem" href="/mdoc/docs/why.html">Why mdoc?</a></li><li class="navListItem"><a class="navItem" href="/mdoc/docs/tut.html">Coming from tut</a></li></ul></div></div></section></div><script>
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -27,7 +27,9 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/olafurpg/mdoc/edit/master/docs/modifiers.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Modifiers</h1></header><article><div><span><p>mdocs supports several modifiers to control the output of code fences.</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/olafurpg/mdoc/edit/master/docs/modifiers.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Modifiers</h1></header><article><div><span><p>Code fences with <code>scala mdoc</code> can have different &quot;modifiers&quot;, which control how
+the code should be evaluated or rendered. A code fence can only have one
+modifier.</p>
 <h2><a class="anchor" aria-hidden="true" id="default"></a><a href="#default" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default</h2>
 <p>The default modifier compiles and executes the code fence as normal</p>
 <p>Before:</p>
@@ -73,7 +75,8 @@ x + y
 ```
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="fail"></a><a href="#fail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fail</h2>
-<p>The <code>fail</code> modifier asserts that the code block will not compile</p>
+<p>The <code>fail</code> modifier asserts that the code block will not compile. The rendered
+output contains the type error message.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:fail
 val x: Int = <span class="hljs-string">""</span>
@@ -89,8 +92,21 @@ val x: Int = <span class="hljs-string">""</span>
 <span class="hljs-comment">//              ^^</span>
 ```
 </code></pre>
+<p>A <code>fail</code> code fence with no compile error fails the build.</p>
+<p>Before:</p>
+<pre><code class="hljs">```scala mdoc:fail
+val x: String = <span class="hljs-string">""</span>
+```
+</code></pre>
+<p>Error:</p>
+<pre><code class="hljs">error: modifiers.md:2:1: error: Expected compile error but statement typechecked successfully
+<span class="hljs-section">val x: String = ""
+^^^^^^^^^^^^^^^^^^</span>
+</code></pre>
+<blockquote>
 <p>Note that <code>fail</code> does not assert that the program compiles but crashes at
 runtime. To assert runtime exceptions, use the <code>crash</code> modifier.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="crash"></a><a href="#crash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Crash</h2>
 <p>The <code>crash</code> modifier asserts that the code block throws an exception at runtime</p>
 <p>Before:</p>
@@ -103,7 +119,7 @@ val y = ???
 val y = ???
 <span class="hljs-regexp">//</span> scala.NotImplementedError: an implementation is missing
 <span class="hljs-regexp">//</span>  at scala.Predef$.<span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span>(Predef.scala:<span class="hljs-number">288</span>)
-<span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>.<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$new</span><span class="hljs-variable">$1</span>(<span class="hljs-regexp">/Users/</span>olafurpg<span class="hljs-regexp">/dev/m</span>doc<span class="hljs-regexp">/docs/m</span>odifiers.md:<span class="hljs-number">9</span>)
+<span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>.<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$new</span><span class="hljs-variable">$1</span>(modifiers.md:<span class="hljs-number">9</span>)
 <span class="hljs-regexp">//</span>  at scala.runtime.java8.JFunction0<span class="hljs-variable">$mcV</span><span class="hljs-variable">$sp</span>.apply(JFunction0<span class="hljs-variable">$mcV</span><span class="hljs-variable">$sp</span>.java:<span class="hljs-number">23</span>)
 ```
 </code></pre>
@@ -209,20 +225,22 @@ value of the last expression in the code fence.</p>
 
 import com.cibo.evilplot.geometry.Drawable
 import java.nio.file.Files
+import java.nio.file.Paths
 import mdoc._
 import scala.meta.inputs.Position
 
 class EvilplotModifier extends PostModifier {
   val name = "evilplot"
   def process(ctx: PostModifierContext): String = {
-    val out = ctx.outputFile.resolveSibling(_ =&gt; ctx.info)
+    val relpath = Paths.get(ctx.info)
+    val out = ctx.outputFile.toNIO.getParent.resolve(relpath)
     ctx.lastValue match {
       case d: Drawable =&gt;
-        Files.createDirectories(out.toNIO.getParent)
-        if (!out.isFile) {
+        Files.createDirectories(out.getParent)
+        if (!Files.isRegularFile(out)) {
           d.write(out.toFile)
         }
-        s"![](${out.toNIO.getFileName})"
+        s"![](${ctx.info})"
       case _ =&gt;
         val (pos, obtained) = ctx.variables.lastOption match {
           case Some(variable) =&gt;
@@ -277,7 +295,7 @@ i</span></span>mport com.cibo.evilplot.numeric.Point
 ```
 </code></pre>
 <p>After:</p>
-<pre><code class="hljs">!<span class="hljs-selector-attr">[]</span>(<span class="hljs-selector-tag">scatterplot</span><span class="hljs-selector-class">.png</span>)
+<pre><code class="hljs">!<span class="hljs-selector-attr">[]</span>(assets/scatterplot.png)
 </code></pre>
 <p>Which renders into a scatter plot like this:</p>
 <p><img src="/mdoc/docs/assets/scatterplot.png" alt=""></p>
@@ -291,7 +309,7 @@ val message = <span class="hljs-string">"hello world!"</span>
 ```
 </code></pre>
 <p>Error:</p>
-<pre><code class="hljs">error: /Users/olafurpg/dev/mdoc/docs/modifiers.md:2:5: error:<span class="hljs-built_in"> type </span>mismatch:
+<pre><code class="hljs">error: modifiers.md:2:5: error:<span class="hljs-built_in"> type </span>mismatch:
   expected: com.cibo.evilplot.geometry.Drawable
   obtained: String = hello world!
 val message = <span class="hljs-string">"hello world!"</span>
@@ -313,13 +331,17 @@ of a code block, ignoring the compilation and interpretation of the Scala code.<
   }
 }
 </code></pre>
-<p>Pass the custom modifier to <code>MainSettings.withStringModifiers(List(...))</code>.</p>
-<pre><code class="hljs css language-scala"><span class="hljs-keyword">val</span> settings = mdoc.<span class="hljs-type">MainSettings</span>()
-  .withStringModifiers(<span class="hljs-type">List</span>(
-    <span class="hljs-keyword">new</span> <span class="hljs-type">FooModifier</span>
-  ))
+<p>Next, create a resource file <code>META-INF/services/mdoc.StringModifier</code> so the post
+modififer is recognized by the JVM
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/ServiceLoader.html">ServiceLoader</a>
+framework.</p>
+<p>File: <a href="https://github.com/olafurpg/mdoc/blob/master/mdoc-docs/src/main/resources/META-INF/services/mdoc.StringModifier">mdoc.StringModifier</a></p>
+<pre><code class="hljs css language-scala">mdoc.docs.<span class="hljs-type">FooModifier</span>
+mdoc.docs.<span class="hljs-type">SbtModifier</span>
+mdoc.docs.<span class="hljs-type">FileModifier</span>
+
 </code></pre>
-<p>Code blocks with the <code>mdoc:foo</code> modifier will then render as follows.</p>
+<p>Code blocks with the <code>mdoc:foo</code> modifier will render as follows.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:foo
 Hello world!
@@ -401,4 +423,4 @@ cached. You should prefer embedding existing snippets whenever possible.</p>
 <span class="hljs-keyword">new</span> <span class="hljs-type">ScastieModifier</span>(theme = <span class="hljs-string">"dark"</span>) <span class="hljs-comment">// default is "light"</span>
 <span class="hljs-comment">// res0: ScastieModifier = StringModifier(mdoc:scastie)</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/installation.html"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/mdoc/docs/why.html"><span>Why mdoc?</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent">Silent</a></li><li><a href="#fail">Fail</a></li><li><a href="#crash">Crash</a></li><li><a href="#passthrough">Passthrough</a></li><li><a href="#invisible">Invisible</a></li><li><a href="#reset">Reset</a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li><li><a href="#scastie">Scastie</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#B23800"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/olafurpg/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2018 Ólafur Páll Geirsson</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/installation.html"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="/mdoc/docs/why.html"><span>Why mdoc?</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent">Silent</a></li><li><a href="#fail">Fail</a></li><li><a href="#crash">Crash</a></li><li><a href="#passthrough">Passthrough</a></li><li><a href="#invisible">Invisible</a></li><li><a href="#reset">Reset</a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li><li><a href="#scastie">Scastie</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#B23800"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/olafurpg/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/olafurpg/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2018 mdoc developers</section></footer></div></body></html>
