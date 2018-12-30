@@ -4,7 +4,7 @@
         <title>mdoc Blog</title>
         <link>https://olafurpg.github.io/mdoc/mdoc/blog</link>
         <description>The best place to stay up-to-date with the latest mdoc news and events.</description>
-        <lastBuildDate>Sat, 29 Dec 2018 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Dec 2018 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -15,9 +15,9 @@
         <copyright>Copyright © 2018 mdoc developers</copyright>
         <item>
             <title><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
-            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html</link>
-            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/29/program-semantics.html</guid>
-            <pubDate>Sat, 29 Dec 2018 06:00:00 GMT</pubDate>
+            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html</link>
+            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html</guid>
+            <pubDate>Sun, 30 Dec 2018 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good
 performance while reporting clear error messages. mdoc is a markdown
 documentation tool inspired by <a href="http://tpolecat.github.io/tut/">tut</a>.</p>
@@ -25,7 +25,8 @@ documentation tool inspired by <a href="http://tpolecat.github.io/tut/">tut</a>.
 output with the Scala code examples evaluated. Unlike tut, mdoc does not use the
 Scala REPL to evaluate Scala code examples. Instead, mdoc translates each
 markdown file into a regular Scala program that evaluates in one run. In this
-post, we learn how this approach delivers improved performance.</p>
+post, we look into the implications of this change and how it can deliver up to
+27x faster performance when processing invalid documents.</p>
 ]]></description>
         </item>
     </channel>
