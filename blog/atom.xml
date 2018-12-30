@@ -22,7 +22,7 @@ output with the Scala code examples evaluated. Unlike tut, mdoc does not use the
 Scala REPL to evaluate Scala code examples. Instead, mdoc translates each
 markdown file into a regular Scala program that evaluates in one run. In this
 post, we look into the implications of this change and how it can deliver up to
-27x faster performance when processing invalid documents.</p>
+<strong>27x faster performance</strong> when processing invalid documents.</p>
 ]]></summary>
         <author>
             <name>Ólafur Páll Geirsson</name>
