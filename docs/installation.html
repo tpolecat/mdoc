@@ -45,14 +45,14 @@ val x = <span class="hljs-number">1</span>
 List(x, x)
 ```
 </code></pre>
-<p>Then we generate the site using one of the available integrations:</p>
+<p>We process the markdown with one of the following mdoc integrations:</p>
 <ul>
-<li><a href="#sbt">sbt-mdoc</a>: for simple integration with sbt builds.</li>
-<li><a href="#command-line">command-line</a>: to run directly from the console outside of a
-build tool.</li>
+<li><a href="#sbt">sbt-mdoc</a>: for usage with sbt projects.</li>
+<li><a href="#command-line">command-line</a>: to run from the console outside of a build
+tool.</li>
 <li><a href="#library">library API</a>: for programmatic usage.</li>
 </ul>
-<p>The resulting generated <code>readme.md</code> will look like this.</p>
+<p>The generated <code>readme.md</code> will look like this.</p>
 <pre><code class="hljs"># My Project
 
 To install my project
@@ -77,24 +77,38 @@ enables <code>mdoc.MdocPlugin</code>.</p>
 <pre><code class="hljs css language-scala"><span class="hljs-comment">// project/plugins.sbt</span>
 addSbtPlugin(<span class="hljs-string">"org.scalameta"</span> % <span class="hljs-string">"sbt-mdoc"</span> % <span class="hljs-string">"1.0.0"</span> )
 <span class="hljs-comment">// build.sbt</span>
-<span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> myproject = project <span class="hljs-comment">// your existing library</span>
+<span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> myproject = project  <span class="hljs-comment">// your existing library</span>
   .settings(...)
-<span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> docs = project <span class="hljs-comment">// new documentation project</span>
-  .in(file(<span class="hljs-string">"myproject-docs"</span>))
+<span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> docs = project       <span class="hljs-comment">// new documentation project</span>
+  .in(file(<span class="hljs-string">"myproject-docs"</span>)) <span class="hljs-comment">// important: must not be docs/</span>
   .dependsOn(myproject)
   .enablePlugins(<span class="hljs-type">MdocPlugin</span>)
 </code></pre>
-<p>Next, from the sbt shell, run the <code>mdoc</code> task to generate the documentation
+<p>Next, from the sbt shell, run the <code>docs/mdoc</code> task to generate the documentation
 site. By default, the <code>mdoc</code> task looks for markdown sources in the toplevel
 <code>docs/</code> directory.</p>
 <pre><code class="hljs css language-scala"><span class="hljs-comment">// sbt shell</span>
 &gt; docs/mdoc
 </code></pre>
+<p>Update <code>mdocVariables</code> to include site variables like <code>@VERSION@</code>.</p>
+<pre><code class="hljs css language-diff">// build.sbt
+lazy val docs = project
+  .in(file("myproject-docs"))
+  .settings(
+<span class="hljs-addition">+   mdocVariables := Map(</span>
+<span class="hljs-addition">+     "VERSION" -&gt; version.value</span>
+<span class="hljs-addition">+   )</span>
+  )
+  .dependsOn(myproject)
+  .enablePlugins(MdocPlugin)
+</code></pre>
 <p>The <code>mdoc</code> task runs the mdoc command-line interface so it's possible to pass in
-arguments like <code>--watch</code> to start file watcher with livereload.</p>
+arguments like <code>--watch</code> to start file watcher with livereload. It's recommended
+to use <code>--watch</code> while writing documentation to enjoy 3-4x faster compilation
+performance.</p>
 <pre><code class="hljs css language-scala">&gt; docs/mdoc --watch
 </code></pre>
-<p>Use <code>--help</code> to learn more how to use the command-line interface.</p>
+<p>See <a href="#help"><code>--help</code></a> to learn more how to use the command-line interface.</p>
 <pre><code class="hljs css language-scala">&gt; docs/mdoc --help
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h3>
@@ -128,9 +142,8 @@ arguments like <code>--watch</code> to start file watcher with livereload.</p>
 </tr>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="command-line"></a><a href="#command-line" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command-line</h2>
-<p>Use
-<a href="https://github.com/coursier/coursier/#command-line">coursier command-line interface</a>
-to launch mdoc outside of a build tool:</p>
+<p>Use <a href="https://github.com/coursier/coursier/#command-line">coursier</a> to launch
+mdoc outside of a build tool.</p>
 <p><a href="https://maven-badges.herokuapp.com/maven-central/org.scalameta/mdoc_2.12"><img src="https://maven-badges.herokuapp.com/maven-central/org.scalameta/mdoc_2.12/badge.svg" alt="Maven Central"></a></p>
 <pre><code class="hljs css language-sh">curl -L -o coursier https://git.io/coursier
 chmod +x coursier
@@ -158,7 +171,9 @@ default the <code>out/</code> directory is used.</p>
 <pre><code class="hljs css language-diff"> coursier launch org.scalameta:mdoc_2.12:1.0.0 \
 <span class="hljs-addition">+  --out target/docs</span>
 </code></pre>
-<p>Use <code>--watch</code> to start the file watcher with livereload.</p>
+<p>Use <code>--watch</code> to start the file watcher with livereload. It's recommended to use
+<code>--watch</code> while writing documentation to enjoy 3-4x faster compilation
+performance.</p>
 <pre><code class="hljs css language-diff"> coursier launch org.scalameta:mdoc_2.12:1.0.0 \
 <span class="hljs-addition">+  --watch</span>
 </code></pre>
@@ -269,6 +284,8 @@ scalaVersion := <span class="hljs-string">"2.12.8"</span> <span class="hljs-comm
 libraryDependencies += <span class="hljs-string">"org.scalameta"</span> %% <span class="hljs-string">"mdoc"</span> % <span class="hljs-string">"1.0.0"</span>
 </code></pre>
 <p>Then write a main function that invokes mdoc as a library</p>
+<p>It's recommended to use <code>--watch</code> while writing documentation to enjoy 3-4x
+faster compilation performance.</p>
 <pre><code class="hljs css language-scala"><span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Main</span> </span>{
   <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = {
     <span class="hljs-comment">// build arguments for mdoc</span>
@@ -282,10 +299,21 @@ libraryDependencies += <span class="hljs-string">"org.scalameta"</span> %% <span
   }
 }
 </code></pre>
+<p>If you use sbt-mdoc, update the <code>mdoc</code> task to call <code>run</code> instead of the default
+<code>runMain mdoc.Main</code>.</p>
+<pre><code class="hljs css language-diff">// build.sbt
+lazy val docs = project
+  .in(file("myproject-docs"))
+  .settings(
+<span class="hljs-addition">+   mdoc := run.in(Compile).evaluated</span>
+  )
+  .dependsOn(myproject)
+  .enablePlugins(MdocPlugin)
+</code></pre>
 <p>Consult the mdoc source to learn more how to use the library API. Scaladocs are
 available
 <a href="https://www.javadoc.io/doc/org.scalameta/mdoc_2.12/1.0.0">here</a>
 but beware there are limited docstrings for classes and methods. Keep in mind
 that code in the package <code>mdoc.internal</code> is subject to binary and source
 breaking changes between any release, including PATCH versions.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/mdoc/docs/modifiers.html"><span>Modifiers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#sbt">sbt</a><ul class="toc-headings"><li><a href="#reference">Reference</a></li></ul></li><li><a href="#command-line">Command-line</a><ul class="toc-headings"><li><a href="#help">Help</a></li></ul></li><li><a href="#library">Library</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#B23800"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2018 mdoc developers</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/mdoc/docs/modifiers.html"><span>Modifiers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#sbt">sbt</a><ul class="toc-headings"><li><a href="#reference">Reference</a></li></ul></li><li><a href="#command-line">Command-line</a><ul class="toc-headings"><li><a href="#help">Help</a></li></ul></li><li><a href="#library">Library</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2018 mdoc developers</section></footer></div></body></html>
