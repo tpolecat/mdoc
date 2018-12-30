@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://olafurpg.github.io/mdoc/mdoc/blog</id>
+    <id>https://scalameta.org/mdoc/mdoc/blog</id>
     <title>mdoc Blog</title>
     <updated>2018-12-30T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
-    <link rel="alternate" href="https://olafurpg.github.io/mdoc/mdoc/blog"/>
+    <link rel="alternate" href="https://scalameta.org/mdoc/mdoc/blog"/>
     <subtitle>The best place to stay up-to-date with the latest mdoc news and events.</subtitle>
-    <logo>https://olafurpg.github.io/mdoc/mdoc/img/mdoc-logo.png</logo>
+    <logo>https://scalameta.org/mdoc/mdoc/img/mdoc-logo.png</logo>
     <rights>Copyright © 2018 mdoc developers</rights>
     <entry>
         <title type="html"><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
-        <id>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html</id>
-        <link href="https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html">
+        <id>https://scalameta.org/mdoc/mdoc/blog/2018/12/30/introduction.html</id>
+        <link href="https://scalameta.org/mdoc/mdoc/blog/2018/12/30/introduction.html">
         </link>
         <updated>2018-12-30T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good

@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>mdoc Blog</title>
-        <link>https://olafurpg.github.io/mdoc/mdoc/blog</link>
+        <link>https://scalameta.org/mdoc/mdoc/blog</link>
         <description>The best place to stay up-to-date with the latest mdoc news and events.</description>
         <lastBuildDate>Sun, 30 Dec 2018 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>mdoc Blog</title>
-            <url>https://olafurpg.github.io/mdoc/mdoc/img/mdoc-logo.png</url>
-            <link>https://olafurpg.github.io/mdoc/mdoc/blog</link>
+            <url>https://scalameta.org/mdoc/mdoc/img/mdoc-logo.png</url>
+            <link>https://scalameta.org/mdoc/mdoc/blog</link>
         </image>
         <copyright>Copyright © 2018 mdoc developers</copyright>
         <item>
             <title><![CDATA[Fast typechecked markdown documentation with clear error messages]]></title>
-            <link>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html</link>
-            <guid>https://olafurpg.github.io/mdoc/mdoc/blog/2018/12/30/introduction.html</guid>
+            <link>https://scalameta.org/mdoc/mdoc/blog/2018/12/30/introduction.html</link>
+            <guid>https://scalameta.org/mdoc/mdoc/blog/2018/12/30/introduction.html</guid>
             <pubDate>Sun, 30 Dec 2018 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>This post introduces how mdoc evaluates Scala code examples with good
 performance while reporting clear error messages. mdoc is a markdown
