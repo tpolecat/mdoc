@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://scalameta.org/mdoc/mdoc/index.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://scalameta.org/mdoc/mdoc/en/index.html" /> </url>
 <url> <loc>https://scalameta.org/mdoc/mdoc/blog/2019/12/30/introduction.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>https://scalameta.org/mdoc/mdoc/blog/2019/01/01/v1.1.1.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://scalameta.org/mdoc/mdoc/blog/2018/12/31/v1.1.0.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://scalameta.org/mdoc/mdoc/blog/2018/12/30/v1.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://scalameta.org/mdoc/mdoc/docs/demo.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://scalameta.org/mdoc/mdoc/docs/demo.html" /> </url>
