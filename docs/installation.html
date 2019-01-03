@@ -80,7 +80,7 @@ addSbtPlugin(<span class="hljs-string">"org.scalameta"</span> % <span class="hlj
 <span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> myproject = project  <span class="hljs-comment">// your existing library</span>
   .settings(...)
 <span class="hljs-keyword">lazy</span> <span class="hljs-keyword">val</span> docs = project       <span class="hljs-comment">// new documentation project</span>
-  .in(file(<span class="hljs-string">"myproject-docs"</span>)) <span class="hljs-comment">// important: must not be docs/</span>
+  .in(file(<span class="hljs-string">"myproject-docs"</span>)) <span class="hljs-comment">// important: it must not be docs/</span>
   .dependsOn(myproject)
   .enablePlugins(<span class="hljs-type">MdocPlugin</span>)
 </code></pre>
@@ -138,7 +138,7 @@ performance.</p>
 </tr><tr>
 <td><code>mdocExtraArguments</code></td>
 <td><code>Seq[String]</code></td>
-<td>Additional command-line arguments to pass on every mdoc invocation. For example, add --no-link-hygiene to disable link hygiene.</td>
+<td>Additional command-line arguments to pass on every mdoc invocation. For example, add '--no-link-hygiene' to disable link hygiene.</td>
 </tr><tr>
 <td><code>mdocJS</code></td>
 <td><code>scala.Option[sbt.Project]</code></td>
