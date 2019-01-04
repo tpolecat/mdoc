@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Scala.js Modifiers · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Code fences with the &lt;code&gt;scala mdoc:js&lt;/code&gt; modifier are compiled with Scala.js and&lt;/p&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Scala.js Modifiers · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://scalameta.org/mdoc/mdoc/index.html"/><meta property="og:description" content="&lt;p&gt;Code fences with the &lt;code&gt;scala mdoc:js&lt;/code&gt; modifier are compiled with Scala.js and&lt;/p&gt;
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Scala.js Modifiers · mdoc</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Code fences with the &lt;code&gt;scala mdoc:js&lt;/code&gt; modifier are compiled with Scala.js and run&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Scala.js Modifiers · mdoc"/><meta property="og:type" content="website"/><meta property="og:url" content="https://scalameta.org/mdoc/mdoc/index.html"/><meta property="og:description" content="&lt;p&gt;Code fences with the &lt;code&gt;scala mdoc:js&lt;/code&gt; modifier are compiled with Scala.js and run&lt;/p&gt;
 "/><meta property="og:image" content="https://scalameta.org/mdoc/mdoc/img/scalameta-logo.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://scalameta.org/mdoc/mdoc/img/scalameta-logo.png"/><link rel="shortcut icon" href="/mdoc/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"/><link rel="alternate" type="application/atom+xml" href="https://scalameta.org/mdoc/mdoc/blog/atom.xml" title="mdoc Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://scalameta.org/mdoc/mdoc/blog/feed.xml" title="mdoc Blog RSS Feed"/><link rel="stylesheet" href="/mdoc/css/custom.css"/><link rel="stylesheet" href="/mdoc/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/mdoc/"><img class="logo" src="/mdoc/img/mdoc-logo.png" alt="mdoc"/><h2 class="headerTitleWithLogo">mdoc</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/mdoc/docs/installation.html" target="_self">Docs</a></li><li class=""><a href="/mdoc/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Modifiers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/mdoc/docs/installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="/mdoc/docs/why.html">Why mdoc?</a></li><li class="navListItem"><a class="navItem" href="/mdoc/docs/tut.html">Coming from tut</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Modifiers</h3><ul><li class="navListItem"><a class="navItem" href="/mdoc/docs/modifiers.html">JVM</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/mdoc/docs/js.html">Scala.js</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Site generators</h3><ul><li class="navListItem"><a class="navItem" href="/mdoc/docs/docusaurus.html">Docusaurus</a></li></ul></div></div></section></div><script>
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
@@ -27,18 +27,34 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/scalameta/mdoc/edit/master/docs/js.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Scala.js Modifiers</h1></header><article><div><span><p>Code fences with the <code>scala mdoc:js</code> modifier are compiled with Scala.js and
-evaluate on every browser page load providing interactive documentation.</p>
-<pre><code class="hljs css language-scala"><span class="hljs-keyword">val</span> tick = { () =&gt;
-  <span class="hljs-keyword">val</span> date = <span class="hljs-keyword">new</span> scala.scalajs.js.<span class="hljs-type">Date</span>()
-  <span class="hljs-keyword">val</span> time = <span class="hljs-string">s"<span class="hljs-subst">${date.getHours}</span>h<span class="hljs-subst">${date.getMinutes}</span>m<span class="hljs-subst">${date.getSeconds}</span>s"</span>
-  <span class="hljs-comment">// `node` variable is a DOM element in scope.</span>
-  node.innerHTML = <span class="hljs-string">s"Current time is <span class="hljs-subst">$time</span>"</span>
-}
-tick()
-org.scalajs.dom.window.setInterval(tick, <span class="hljs-number">1000</span>)
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/scalameta/mdoc/edit/master/docs/js.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Scala.js Modifiers</h1></header><article><div><span><p>Code fences with the <code>scala mdoc:js</code> modifier are compiled with Scala.js and run
+in the browser.</p>
+<pre><code class="hljs css language-md"><span class="hljs-code">```scala mdoc:js
+val progress = new Progress()
+setInterval({ () =&gt;
+  // `node` variable is a DOM element in scope.
+  node.innerHTML = progress.tick(5)
+}, 100)
+```</span>
 </code></pre>
-<div id="mdoc-js-run0" data-mdoc-js>Loading...</div>
+<div id="mdoc-js-run1" data-mdoc-js>Loading progress bar...</div>
+<p></p>
+<p>A good use-case for <code>mdoc:js</code> code fences is interactive documentation. For
+example, here below is a counter implemented with
+<a href="https://github.com/OlivierBlanvillain/monadic-html">monadic-html</a>.</p>
+<pre><code class="hljs css language-md"><span class="hljs-code">```scala mdoc:js
+import mhtml._
+val counter = Var(0)
+val component =
+  &lt;div&gt;
+    &lt;button onclick={() =&gt; counter.update(_ - 1)}&gt;-&lt;/button&gt;
+    {counter}
+    &lt;button onclick={() =&gt; counter.update(_ + 1)}&gt;+&lt;/button&gt;
+  &lt;/div&gt;
+mount(node, component)
+```</span>
+</code></pre>
+<div id="mdoc-js-run2" data-mdoc-js></div>
 <h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
 <p>The <code>mdoc:js</code> modifier requires custom installation steps.</p>
 <h3><a class="anchor" aria-hidden="true" id="sbt-mdoc"></a><a href="#sbt-mdoc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sbt-mdoc</h3>
@@ -122,7 +138,7 @@ import scala<span class="hljs-selector-class">.scalajs</span><span class="hljs-s
   node.innerHTML = <span class="hljs-string">s"&lt;p&gt;Shared date <span class="hljs-subst">$date</span>&lt;/p&gt;"</span>
 }, <span class="hljs-number">1000</span>)
 </code></pre>
-<div id="mdoc-js-run2" data-mdoc-js>Loading <code>:shared</code> example...</div>
+<div id="mdoc-js-run4" data-mdoc-js>Loading <code>:shared</code> example...</div>
 <p>Without <code>:shared</code>, the example above results in a compile error.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:js
@@ -161,7 +177,7 @@ org<span class="hljs-selector-class">.scalajs</span><span class="hljs-selector-c
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"assets/mdoc.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-<div id="mdoc-js-run3" data-mdoc-js>Loading <code>:invisible</code> example...</div>
+<div id="mdoc-js-run5" data-mdoc-js>Loading <code>:invisible</code> example...</div>
 <h2><a class="anchor" aria-hidden="true" id="loading-html"></a><a href="#loading-html" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Loading HTML</h2>
 <p>By default, the <code>node</code> variable points to an empty div element. Prefix the code
 fence with custom HTML followed by a <code>---</code> separator to set the inner HTML of
@@ -191,14 +207,14 @@ println(node.innerHTML)
 <pre><code class="hljs css language-scala"><span class="hljs-comment">// Open developer console to see this printed message</span>
 println(<span class="hljs-string">s"Loading HTML: <span class="hljs-subst">${node.innerHTML}</span>"</span>)
 </code></pre>
-<div id="mdoc-js-run4" data-mdoc-js><p>I am a custom <code>loader</code></p></div>
+<div id="mdoc-js-run6" data-mdoc-js><p>I am a custom <code>loader</code></p></div>
 <p>Replace the node's <code>innerHTML</code> to make the HTML disappear once the document has
 loaded.</p>
 <pre><code class="hljs css language-scala">org.scalajs.dom.window.setTimeout(() =&gt; {
  node.innerHTML = <span class="hljs-string">"I am loaded. Refresh the page to load me again."</span>
 }, <span class="hljs-number">3000</span>)
 </code></pre>
-<div id="mdoc-js-run5" data-mdoc-js>I disappear in 3 seconds...</div>
+<div id="mdoc-js-run7" data-mdoc-js>I disappear in 3 seconds...</div>
 <h2><a class="anchor" aria-hidden="true" id="using-scalajs-bundler"></a><a href="#using-scalajs-bundler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using scalajs-bundler</h2>
 <p>The <a href="https://scalacenter.github.io/scalajs-bundler/">scalajs-bundler</a> plugin can
 be used to install npm dependencies and bundle applications with webpack.</p>
@@ -263,7 +279,7 @@ project contains the setting <code>scalaJSUseMainModuleInitializer := true</code
 <span class="hljs-keyword">val</span> time = jsdocs.ms(date.getTime())
 node.innerHTML = <span class="hljs-string">s"Hello from npm package 'ms': <span class="hljs-subst">$time</span>"</span>
 </code></pre>
-<div id="mdoc-js-run6" data-mdoc-js></div>
+<div id="mdoc-js-run8" data-mdoc-js></div>
 <p>If the <code>ms</code> function is not referenced from the <code>jsdocs</code> main function you get a
 stacktrace in the browser console like this:</p>
 <pre><code class="hljs css language-js">Uncaught <span class="hljs-built_in">TypeError</span>: $i_ms is not a <span class="hljs-function"><span class="hljs-keyword">function</span>
