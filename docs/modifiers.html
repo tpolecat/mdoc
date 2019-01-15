@@ -48,7 +48,7 @@ x + y
 <span class="hljs-comment">// res0: Int = 3</span>
 ```
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="silent"></a><a href="#silent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Silent</h2>
+<h2><a class="anchor" aria-hidden="true" id="silent"></a><a href="#silent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>silent</code></h2>
 <p>The <code>silent</code> modifier is identical to the default modifier except that it hides
 the evaluated output. The input code fence renders unchanged.</p>
 <p>Before:</p>
@@ -73,7 +73,7 @@ x + y
 <span class="hljs-comment">// res1: Int = 3</span>
 ```
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="fail"></a><a href="#fail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fail</h2>
+<h2><a class="anchor" aria-hidden="true" id="fail"></a><a href="#fail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>fail</code></h2>
 <p>The <code>fail</code> modifier asserts that the code block will not compile. The rendered
 output contains the type error message.</p>
 <p>Before:</p>
@@ -106,7 +106,7 @@ val x: String = <span class="hljs-string">""</span>
 <p>Note that <code>fail</code> does not assert that the program compiles but crashes at
 runtime. To assert runtime exceptions, use the <code>crash</code> modifier.</p>
 </blockquote>
-<h2><a class="anchor" aria-hidden="true" id="crash"></a><a href="#crash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Crash</h2>
+<h2><a class="anchor" aria-hidden="true" id="crash"></a><a href="#crash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>crash</code></h2>
 <p>The <code>crash</code> modifier asserts that the code block throws an exception at runtime</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:crash
@@ -123,7 +123,7 @@ val y = ???
 <span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span>.apply(modifiers.md:<span class="hljs-number">8</span>)
 ```
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="passthrough"></a><a href="#passthrough" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Passthrough</h2>
+<h2><a class="anchor" aria-hidden="true" id="passthrough"></a><a href="#passthrough" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>passthrough</code></h2>
 <p>The <code>passthrough</code> modifier collects the stdout and stderr output from the
 program and embeds it verbatim in the markdown file.</p>
 <p>Before:</p>
@@ -158,7 +158,7 @@ Look at the table:
 |<span class="hljs-string">  3 </span>|<span class="hljs-string">  6 </span>|<span class="hljs-string">  9 </span>|<span class="hljs-string"> 12 </span>|
 |<span class="hljs-string">  4 </span>|<span class="hljs-string">  8 </span>|<span class="hljs-string"> 12 </span>|<span class="hljs-string"> 16 </span>|
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="invisible"></a><a href="#invisible" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Invisible</h2>
+<h2><a class="anchor" aria-hidden="true" id="invisible"></a><a href="#invisible" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>invisible</code></h2>
 <p>The <code>invisible</code> modifier evaluates the code but does not render anything. The
 <code>invisible</code> modifier is equivalent to <code>passthrough</code> when the expression does not
 print to stdout.</p>
@@ -174,7 +174,7 @@ More prose.
 
 More prose.
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="reset"></a><a href="#reset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reset</h2>
+<h2><a class="anchor" aria-hidden="true" id="reset"></a><a href="#reset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>reset</code></h2>
 <p>The <code>reset</code> modifier starts a new scope where previous statements in the
 document are no longer available. This can be helpful to clear existing imports
 or implicits in scope.</p>
@@ -211,7 +211,7 @@ println(x)
 //         ^
 ```
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="reset-class"></a><a href="#reset-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reset class</h2>
+<h2><a class="anchor" aria-hidden="true" id="reset-class"></a><a href="#reset-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>reset-class</code></h2>
 <p>The <code>:reset-class</code> modifier is like <code>:reset</code> except that it wraps the following
 statements in a class instead of an object. By default, statements are wrapped
 in an object but that encoding can cause problems such as deadlocks during
@@ -268,6 +268,92 @@ objects</li>
 reference in this type test cannot be checked at run time.&quot; warnings under
 <code>-Xfatal-warnings</code>.</li>
 </ul>
+<h2><a class="anchor" aria-hidden="true" id="to-string"></a><a href="#to-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>to-string</code></h2>
+<p>The <code>toString</code> modifier changes the pretty-printer for runtime values to use
+<code>Object.toString</code> instead of <a href="http://www.lihaoyi.com/PPrint/">PPrint</a>.</p>
+<p>Before:</p>
+<pre><code class="hljs">```scala mdoc:to-string
+List(<span class="hljs-string">"no quotes"</span>)
+```
+```scala mdoc
+List(<span class="hljs-string">"with quotes"</span>)
+```
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs">```scala
+List(<span class="hljs-string">"no quotes"</span>)
+<span class="hljs-comment">// res0: List[String] = List(no quotes)</span>
+```
+
+```scala
+List(<span class="hljs-string">"with quotes"</span>)
+<span class="hljs-comment">// res1: List[String] = List("with quotes")</span>
+```
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="scastie"></a><a href="#scastie" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>scastie</code></h2>
+<p>The <code>scastie</code> modifier transforms a Scala code block into a
+<a href="https://scastie.scala-lang.org/">Scastie</a> snippet.</p>
+<blockquote>
+<p>ℹ️ This modifier will work only in environments that support embedding a
+<code>&lt;script&gt;</code> tag. For example, it won't work in GitHub readmes, but it will work
+when building a static website from Markdown (e.g., with
+<a href="https://docusaurus.io/">Docusaurus</a>)</p>
+</blockquote>
+<p>You can embed an existing Scastie snippet by its id:</p>
+<p>Before:</p>
+<pre><code class="hljs">```scala mdoc:scastie:xbrvky6fTjysG32zK6kzRQ
+
+```
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://scastie.scala-lang.org/xbrvky6fTjysG32zK6kzRQ.js?theme=light'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>or in case of a user's snippet:</p>
+<p>Before:</p>
+<pre><code class="hljs">```scala mdoc:scastie:MasseGuillaume/CpO2s8v2Q1qGdO3vROYjfg
+
+```
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://scastie.scala-lang.org/MasseGuillaume/CpO2s8v2Q1qGdO3vROYjfg.js?theme=light'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>⚠️ The empty line in the block can't be omitted due to how the Markdown parser
+works</p>
+</blockquote>
+<p>Moreover, you can quickly translate any Scala code block block into a Scastie
+snippet on the fly.</p>
+<p>Before:</p>
+<pre><code class="hljs">```scala mdoc:scastie
+val x = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
+println(x)
+```
+</code></pre>
+<p>After:</p>
+<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://scastie.scala-lang.org/embedded.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'scastie-snippet-&lt;a_random_uuid&gt;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+scastie.Embedded(<span class="hljs-string">'.scastie-snippet-&lt;a_random_uuid&gt;'</span>, {
+<span class="hljs-attr">code</span>: <span class="hljs-string">`val x = 1 + 2
+println(x)`</span>,
+<span class="hljs-attr">theme</span>: <span class="hljs-string">'light'</span>,
+<span class="hljs-attr">isWorksheetMode</span>: <span class="hljs-literal">true</span>,
+<span class="hljs-attr">targetType</span>: <span class="hljs-string">'jvm'</span>,
+<span class="hljs-attr">scalaVersion</span>: <span class="hljs-string">'2.12.6'</span>
+})
+})</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>⚠️ Inline snippets are slower to run than embedded ones, since they won't be
+cached. You should prefer embedding existing snippets whenever possible.</p>
+</blockquote>
+<p>You can choose the Scastie theme when initializing the Scastie modifier:</p>
+<pre><code class="hljs css language-scala"><span class="hljs-keyword">import</span> mdoc.modifiers.<span class="hljs-type">ScastieModifier</span>
+<span class="hljs-keyword">new</span> <span class="hljs-type">ScastieModifier</span>(theme = <span class="hljs-string">"dark"</span>) <span class="hljs-comment">// default is "light"</span>
+<span class="hljs-comment">// res0: ScastieModifier = StringModifier(mdoc:scastie)</span>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="postmodifier"></a><a href="#postmodifier" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PostModifier</h2>
 <p>A <code>PostModifier</code> is a custom modifier that post-processes a compiled and
 interpreted mdoc code fence. Post modifiers have access to the original code
@@ -413,71 +499,7 @@ Hello world!
 <p>After:</p>
 <pre><code class="hljs"><span class="hljs-keyword">BOOM
 </span></code></pre>
-<h2><a class="anchor" aria-hidden="true" id="scastie"></a><a href="#scastie" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scastie</h2>
-<p>The <code>scastie</code> modifier transforms a Scala code block into a
-<a href="https://scastie.scala-lang.org/">Scastie</a> snippet.</p>
-<blockquote>
-<p>ℹ️ This modifier will work only in environments that support embedding a
-<code>&lt;script&gt;</code> tag. For example, it won't work in GitHub readmes, but it will work
-when building a static website from Markdown (e.g., with
-<a href="https://docusaurus.io/">Docusaurus</a>)</p>
-</blockquote>
-<p>You can embed an existing Scastie snippet by its id:</p>
-<p>Before:</p>
-<pre><code class="hljs">```scala mdoc:scastie:xbrvky6fTjysG32zK6kzRQ
-
-```
-</code></pre>
-<p>After:</p>
-<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://scastie.scala-lang.org/xbrvky6fTjysG32zK6kzRQ.js?theme=light'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<p>or in case of a user's snippet:</p>
-<p>Before:</p>
-<pre><code class="hljs">```scala mdoc:scastie:MasseGuillaume/CpO2s8v2Q1qGdO3vROYjfg
-
-```
-</code></pre>
-<p>After:</p>
-<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://scastie.scala-lang.org/MasseGuillaume/CpO2s8v2Q1qGdO3vROYjfg.js?theme=light'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<blockquote>
-<p>⚠️ The empty line in the block can't be omitted due to how the Markdown parser
-works</p>
-</blockquote>
-<p>Moreover, you can quickly translate any Scala code block block into a Scastie
-snippet on the fly.</p>
-<p>Before:</p>
-<pre><code class="hljs">```scala mdoc:scastie
-val x = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>
-println(x)
-```
-</code></pre>
-<p>After:</p>
-<pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://scastie.scala-lang.org/embedded.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'scastie-snippet-&lt;a_random_uuid&gt;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-scastie.Embedded(<span class="hljs-string">'.scastie-snippet-&lt;a_random_uuid&gt;'</span>, {
-<span class="hljs-attr">code</span>: <span class="hljs-string">`val x = 1 + 2
-println(x)`</span>,
-<span class="hljs-attr">theme</span>: <span class="hljs-string">'light'</span>,
-<span class="hljs-attr">isWorksheetMode</span>: <span class="hljs-literal">true</span>,
-<span class="hljs-attr">targetType</span>: <span class="hljs-string">'jvm'</span>,
-<span class="hljs-attr">scalaVersion</span>: <span class="hljs-string">'2.12.6'</span>
-})
-})</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<blockquote>
-<p>⚠️ Inline snippets are slower to run than embedded ones, since they won't be
-cached. You should prefer embedding existing snippets whenever possible.</p>
-</blockquote>
-<p>You can choose the Scastie theme when initializing the Scastie modifier:</p>
-<pre><code class="hljs css language-scala"><span class="hljs-keyword">import</span> mdoc.modifiers.<span class="hljs-type">ScastieModifier</span>
-<span class="hljs-keyword">new</span> <span class="hljs-type">ScastieModifier</span>(theme = <span class="hljs-string">"dark"</span>) <span class="hljs-comment">// default is "light"</span>
-<span class="hljs-comment">// res0: ScastieModifier = StringModifier(mdoc:scastie)</span>
-</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/changelog.html"><span class="arrow-prev">← </span><span>Changelog</span></a><a class="docs-next button" href="/mdoc/docs/js.html"><span>Scala.js</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent">Silent</a></li><li><a href="#fail">Fail</a></li><li><a href="#crash">Crash</a></li><li><a href="#passthrough">Passthrough</a></li><li><a href="#invisible">Invisible</a></li><li><a href="#reset">Reset</a></li><li><a href="#reset-class">Reset class</a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li><li><a href="#scastie">Scastie</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/changelog.html"><span class="arrow-prev">← </span><span>Changelog</span></a><a class="docs-next button" href="/mdoc/docs/js.html"><span>Scala.js</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent"><code>silent</code></a></li><li><a href="#fail"><code>fail</code></a></li><li><a href="#crash"><code>crash</code></a></li><li><a href="#passthrough"><code>passthrough</code></a></li><li><a href="#invisible"><code>invisible</code></a></li><li><a href="#reset"><code>reset</code></a></li><li><a href="#reset-class"><code>reset-class</code></a></li><li><a href="#to-string"><code>to-string</code></a></li><li><a href="#scastie"><code>scastie</code></a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
