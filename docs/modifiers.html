@@ -40,11 +40,11 @@ x + y
 </code></pre>
 <p>After:</p>
 <pre><code class="hljs">```scala
-val x = <span class="hljs-number">1</span>
+val <span class="hljs-symbol">x</span> = <span class="hljs-number">1</span>
 <span class="hljs-comment">// x: Int = 1</span>
-val y = <span class="hljs-number">2</span>
+val <span class="hljs-symbol">y</span> = <span class="hljs-number">2</span>
 <span class="hljs-comment">// y: Int = 2</span>
-x + y
+<span class="hljs-symbol">x</span> + <span class="hljs-symbol">y</span>
 <span class="hljs-comment">// res0: Int = 3</span>
 ```
 </code></pre>
@@ -70,7 +70,7 @@ x + y
 
 ```scala
 x + y
-<span class="hljs-comment">// res1: Int = 3</span>
+<span class="hljs-symbol">// res1:</span> Int = <span class="hljs-number">3</span>
 ```
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="fail"></a><a href="#fail" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>fail</code></h2>
@@ -78,23 +78,23 @@ x + y
 output contains the type error message.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:fail
-val x: Int = <span class="hljs-string">""</span>
+<span class="hljs-symbol">val x:</span> Int = <span class="hljs-string">""</span>
 ```
 </code></pre>
 <p>After:</p>
 <pre><code class="hljs">```scala
 val x: Int = <span class="hljs-string">""</span>
-<span class="hljs-comment">// error: type mismatch;</span>
-<span class="hljs-comment">//  found   : String("")</span>
-<span class="hljs-comment">//  required: Int</span>
-<span class="hljs-comment">// val x: Int = ""</span>
-<span class="hljs-comment">//              ^^</span>
+<span class="hljs-regexp">//</span> error: type mismatch;
+<span class="hljs-regexp">//</span>  found   : String(<span class="hljs-string">""</span>)
+<span class="hljs-regexp">//</span>  required: Int
+<span class="hljs-regexp">//</span> val x: Int = <span class="hljs-string">""</span>
+<span class="hljs-regexp">//</span>              ^^
 ```
 </code></pre>
 <p>A <code>fail</code> code fence with no compile error fails the build.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:fail
-val x: String = <span class="hljs-string">""</span>
+<span class="hljs-symbol">val x:</span> String = <span class="hljs-string">""</span>
 ```
 </code></pre>
 <p>Error:</p>
@@ -116,11 +116,11 @@ val y = ???
 <p>After:</p>
 <pre><code class="hljs">```scala
 val y = ???
-<span class="hljs-regexp">//</span> scala.NotImplementedError: an implementation is missing
-<span class="hljs-regexp">//</span>  at scala.Predef$.<span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span>(Predef.scala:<span class="hljs-number">288</span>)
-<span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span>.apply<span class="hljs-variable">$mcV</span><span class="hljs-variable">$sp</span>(modifiers.md:<span class="hljs-number">9</span>)
-<span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span>.apply(modifiers.md:<span class="hljs-number">8</span>)
-<span class="hljs-regexp">//</span>  at repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span>.apply(modifiers.md:<span class="hljs-number">8</span>)
+// scala.NotImplementedError: an implementation <span class="hljs-literal">is</span> missing
+//  <span class="hljs-keyword">at</span> scala.Predef$.<span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span><span class="hljs-variable">$qmark</span>(Predef.scala:<span class="hljs-number">288</span>)
+//  <span class="hljs-keyword">at</span> repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span><span class="hljs-built_in">.apply</span><span class="hljs-variable">$mcV</span><span class="hljs-variable">$sp</span>(modifiers.md:<span class="hljs-number">9</span>)
+//  <span class="hljs-keyword">at</span> repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span><span class="hljs-built_in">.apply</span>(modifiers.md:<span class="hljs-number">8</span>)
+//  <span class="hljs-keyword">at</span> repl.Session<span class="hljs-variable">$App</span>$<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$1</span><span class="hljs-built_in">.apply</span>(modifiers.md:<span class="hljs-number">8</span>)
 ```
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="passthrough"></a><a href="#passthrough" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>passthrough</code></h2>
@@ -221,9 +221,9 @@ for a more detailed explanation.</p>
 <p>For example, the following program crashes by default with a timeout exception.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc
-<span class="hljs-keyword">import</span> scala.concurrent._, duration._, mdoc.docs.executor
-val x = <span class="hljs-number">1</span>
-Await.result(Future(x), Duration(<span class="hljs-string">"10ms"</span>))
+import scala.concurrent._, duration._, mdoc.docs.executor
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
 ```
 </code></pre>
 <p>Error:</p>
@@ -245,17 +245,17 @@ Caused by: java<span class="hljs-selector-class">.util</span><span class="hljs-s
 <p>Use <code>:reset-class</code> to avoid the timeout exception.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:reset-<span class="hljs-keyword">class</span>
-<span class="hljs-keyword">import</span> scala.concurrent._, duration._, mdoc.docs.executor
-val x = <span class="hljs-number">1</span>
-Await.result(Future(x), Duration(<span class="hljs-string">"10ms"</span>))
+import scala.concurrent._, duration._, mdoc.docs.executor
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
 ```
 </code></pre>
 <p>After:</p>
 <pre><code class="hljs">```scala
-<span class="hljs-keyword">import</span> scala.concurrent._, duration._, mdoc.docs.executor
-val x = <span class="hljs-number">1</span>
+import scala.concurrent._, duration._, mdoc.docs.executor
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
 <span class="hljs-comment">// x: Int = 1</span>
-Await.result(Future(x), Duration(<span class="hljs-string">"10ms"</span>))
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
 <span class="hljs-comment">// res1: Int = 1</span>
 ```
 </code></pre>
@@ -282,12 +282,12 @@ List(<span class="hljs-string">"with quotes"</span>)
 <p>After:</p>
 <pre><code class="hljs">```scala
 List(<span class="hljs-string">"no quotes"</span>)
-<span class="hljs-comment">// res0: List[String] = List(no quotes)</span>
+<span class="hljs-symbol">// res0:</span> List[String] = List(no quotes)
 ```
 
 ```scala
 List(<span class="hljs-string">"with quotes"</span>)
-<span class="hljs-comment">// res1: List[String] = List("with quotes")</span>
+<span class="hljs-symbol">// res1:</span> List[String] = List(<span class="hljs-string">"with quotes"</span>)
 ```
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="scastie"></a><a href="#scastie" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>scastie</code></h2>

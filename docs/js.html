@@ -102,12 +102,12 @@ the rendered output.</p>
 <code>:shared</code> modifier to reuse imports or variables between code fences.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:js:shared
-<span class="hljs-keyword">import</span> org.scalajs.dom.window.setInterval
-<span class="hljs-keyword">import</span> scala.scalajs.js.Date
+import org<span class="hljs-selector-class">.scalajs</span><span class="hljs-selector-class">.dom</span><span class="hljs-selector-class">.window</span><span class="hljs-selector-class">.setInterval</span>
+import scala<span class="hljs-selector-class">.scalajs</span><span class="hljs-selector-class">.js</span><span class="hljs-selector-class">.Date</span>
 ```
 ```scala mdoc:js
-setInterval(() =&gt; {
-  node.innerHTML = new Date().toString()
+<span class="hljs-function"><span class="hljs-title">setInterval</span><span class="hljs-params">(()</span></span> =&gt; {
+  node<span class="hljs-selector-class">.innerHTML</span> = new Date().toString()
 }, <span class="hljs-number">1000</span>)
 ```
 </code></pre>
@@ -142,10 +142,10 @@ import scala<span class="hljs-selector-class">.scalajs</span><span class="hljs-s
 <p>Without <code>:shared</code>, the example above results in a compile error.</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc:js
-<span class="hljs-keyword">import</span> scala.scalajs.js.Date
+import scala.scalajs.js.Date
 ```
 ```scala mdoc:js
-new Date()
+<span class="hljs-keyword">new</span> Date()
 ```
 </code></pre>
 <p>Error:</p>
