@@ -169,7 +169,50 @@ stages</p>
 project.</p>
 <p>You're all set! Merge a PR to your project and watch the Travis job release the
 docs 😎</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/js.html"><span class="arrow-prev">← </span><span>Scala.js</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#create-static-site">Create static site</a></li><li><a href="#publish-to-github-pages-locally">Publish to GitHub pages locally</a></li><li><a href="#publish-to-github-pages-from-ci">Publish to GitHub pages from CI</a><ul class="toc-headings"><li><a href="#deploy-key">Deploy key</a></li><li><a href="#environment-variables">Environment variables</a></li><li><a href="#travisyml"><code>.travis.yml</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="include-scaladoc-in-site"></a><a href="#include-scaladoc-in-site" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Include Scaladoc in site</h2>
+<p>You can configure a project to include Scaladocs in its site. Below is an example configuration that uses <a href="https://github.com/sbt/sbt-unidoc">sbt-unidoc</a> to aggregate Scaladocs across multiple projects.</p>
+<pre><code class="hljs css language-diff"> // build.sbt
+ lazy val docs = project
+   .settings(
+     moduleName := "myproject-docs",
+<span class="hljs-addition">+      unidocProjectFilter in (ScalaUnidoc, unidoc) := inProjects(myproject1, myproject2),</span>
+<span class="hljs-addition">+      target in (ScalaUnidoc, unidoc) := (baseDirectory in LocalRootProject).value / "website" / "static" / "api",</span>
+<span class="hljs-addition">+      cleanFiles += (target in (ScalaUnidoc, unidoc)).value,</span>
+<span class="hljs-addition">+      docusaurusCreateSite := docusaurusCreateSite.dependsOn(unidoc in Compile).value,</span>
+   )
+<span class="hljs-deletion">-  .enablePlugins(MdocPlugin, DocusaurusPlugin)</span>
+<span class="hljs-addition">+  .enablePlugins(MdocPlugin, DocusaurusPlugin, ScalaUnidocPlugin)</span>
+   .dependsOn(myproject1, myproject2)
+</code></pre>
+<p>Make sure that you've added the <a href="https://github.com/sbt/sbt-unidoc#how-to-add-this-plugin">sbt-unidoc</a> dependency to <code>project/plugins.sbt</code>.</p>
+<p>Now the <code>docs/docusaurusCreateSite</code> command will generate Scaladocs in the <code>website/static/api</code> directory, which you'll probably want to add to your <code>.gitignore</code>:</p>
+<pre><code class="hljs css language-diff">  // .gitignore
+  website/translated_docs
+  website/build/
+  website/yarn.lock
+  website/node_modules
+  website/i18n/*
+  !website/i18n/en.json
+<span class="hljs-addition">+ website/static/api</span>
+</code></pre>
+<p>You'll need to tweak your <code>siteConfig.js</code> file to make Docusaurus play nicely with Scaladoc's CSS. You may want to add a header link to your API docs too:</p>
+<pre><code class="hljs css language-diff">  // website/siteConfig.js
+<span class="hljs-addition">+ const baseUrl = '/my-project/' // Base URL for your project */</span>
+
+  const siteConfig = {
+    ...
+<span class="hljs-deletion">-   baseUrl: /my-project/,</span>
+<span class="hljs-addition">+   baseUrl: baseUrl,</span>
+    ...
+    headerLinks: [
+<span class="hljs-addition">+    { href: `${baseUrl}api/index.html`, label: 'API'},</span>
+    ],
+    // by default Docusaurus combines CSS files in a way that doesn't play nicely with Scaladoc
+<span class="hljs-addition">+   separateCss: ["api"],</span>
+    ...
+  }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/js.html"><span class="arrow-prev">← </span><span>Scala.js</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#requirements">Requirements</a></li><li><a href="#installation">Installation</a></li><li><a href="#create-static-site">Create static site</a></li><li><a href="#publish-to-github-pages-locally">Publish to GitHub pages locally</a></li><li><a href="#publish-to-github-pages-from-ci">Publish to GitHub pages from CI</a><ul class="toc-headings"><li><a href="#deploy-key">Deploy key</a></li><li><a href="#environment-variables">Environment variables</a></li><li><a href="#travisyml"><code>.travis.yml</code></a></li></ul></li><li><a href="#include-scaladoc-in-site">Include Scaladoc in site</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
