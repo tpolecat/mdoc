@@ -179,6 +179,7 @@ docs 😎</p>
 <span class="hljs-addition">+      target in (ScalaUnidoc, unidoc) := (baseDirectory in LocalRootProject).value / "website" / "static" / "api",</span>
 <span class="hljs-addition">+      cleanFiles += (target in (ScalaUnidoc, unidoc)).value,</span>
 <span class="hljs-addition">+      docusaurusCreateSite := docusaurusCreateSite.dependsOn(unidoc in Compile).value,</span>
+<span class="hljs-addition">+      docusaurusPublishGhpages := docusaurusPublishGhpages.dependsOn(unidoc in Compile).value,</span>
    )
 <span class="hljs-deletion">-  .enablePlugins(MdocPlugin, DocusaurusPlugin)</span>
 <span class="hljs-addition">+  .enablePlugins(MdocPlugin, DocusaurusPlugin, ScalaUnidocPlugin)</span>
