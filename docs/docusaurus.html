@@ -150,19 +150,19 @@ necessary to use build stages but they make it easy to avoid publishing the
 website multiple times from parallel jobs. Define the <code>test</code> and <code>release</code> build
 stages</p>
 <pre><code class="hljs css language-yml"><span class="hljs-attr">stages:</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">test</span>
-<span class="hljs-attr">  - name:</span> <span class="hljs-string">release</span>
-<span class="hljs-attr">    if:</span> <span class="hljs-string">(branch</span> <span class="hljs-string">=</span> <span class="hljs-string">master</span> <span class="hljs-string">AND</span> <span class="hljs-string">type</span> <span class="hljs-string">=</span> <span class="hljs-string">push)</span> <span class="hljs-string">OR</span> <span class="hljs-string">(tag</span> <span class="hljs-string">IS</span> <span class="hljs-string">present)</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">test</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">release</span>
+    <span class="hljs-attr">if:</span> <span class="hljs-string">(branch</span> <span class="hljs-string">=</span> <span class="hljs-string">master</span> <span class="hljs-string">AND</span> <span class="hljs-string">type</span> <span class="hljs-string">=</span> <span class="hljs-string">push)</span> <span class="hljs-string">OR</span> <span class="hljs-string">(tag</span> <span class="hljs-string">IS</span> <span class="hljs-string">present)</span>
 </code></pre>
 <p>Next, define your build matrix with <code>docs/docusaurusPublishGhpages</code> at the end</p>
 <pre><code class="hljs css language-yml"><span class="hljs-attr">jobs:</span>
-<span class="hljs-attr">  include:</span>
+  <span class="hljs-attr">include:</span>
     <span class="hljs-comment"># stage="test" if no stage is specified</span>
-<span class="hljs-attr">    - env:</span> <span class="hljs-string">TEST="test"</span>
-<span class="hljs-attr">      script:</span> <span class="hljs-string">sbt</span> <span class="hljs-string">test</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">env:</span> <span class="hljs-string">TEST="test"</span>
+      <span class="hljs-attr">script:</span> <span class="hljs-string">sbt</span> <span class="hljs-string">test</span>
     <span class="hljs-comment"># release runs only if the previous stages passed</span>
-<span class="hljs-attr">    - stage:</span> <span class="hljs-string">release</span>
-<span class="hljs-attr">      script:</span> <span class="hljs-string">sbt</span> <span class="hljs-string">docs/docusaurusPublishGhpages</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-attr">stage:</span> <span class="hljs-string">release</span>
+      <span class="hljs-attr">script:</span> <span class="hljs-string">sbt</span> <span class="hljs-string">docs/docusaurusPublishGhpages</span>
 </code></pre>
 <p>For a complete example of the Travis configuration, see the
 <a href="https://github.com/scalameta/mdoc/blob/master/.travis.yml">.travis.yml</a> in this

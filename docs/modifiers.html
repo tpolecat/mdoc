@@ -39,14 +39,14 @@ x + y
 ```
 </code></pre>
 <p>After:</p>
-<pre><code class="hljs">```scala
-val <span class="hljs-symbol">x</span> = <span class="hljs-number">1</span>
-<span class="hljs-comment">// x: Int = 1</span>
-val <span class="hljs-symbol">y</span> = <span class="hljs-number">2</span>
-<span class="hljs-comment">// y: Int = 2</span>
-<span class="hljs-symbol">x</span> + <span class="hljs-symbol">y</span>
-<span class="hljs-comment">// res0: Int = 3</span>
-```
+<pre><code class="hljs"><span class="hljs-string">```scala</span>
+<span class="hljs-string">val</span> <span class="hljs-string">x</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span>
+<span class="hljs-string">//</span> <span class="hljs-attr">x:</span> <span class="hljs-string">Int</span> <span class="hljs-string">=</span> <span class="hljs-number">1</span>
+<span class="hljs-string">val</span> <span class="hljs-string">y</span> <span class="hljs-string">=</span> <span class="hljs-number">2</span>
+<span class="hljs-string">//</span> <span class="hljs-attr">y:</span> <span class="hljs-string">Int</span> <span class="hljs-string">=</span> <span class="hljs-number">2</span>
+<span class="hljs-string">x</span> <span class="hljs-string">+</span> <span class="hljs-string">y</span>
+<span class="hljs-string">//</span> <span class="hljs-attr">res0:</span> <span class="hljs-string">Int</span> <span class="hljs-string">=</span> <span class="hljs-number">3</span>
+<span class="hljs-string">```</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="silent"></a><a href="#silent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>silent</code></h2>
 <p>The <code>silent</code> modifier is identical to the default modifier except that it hides
@@ -169,7 +169,7 @@ println(<span class="hljs-string">"I am invisible"</span>)
 More prose.
 </code></pre>
 <p>After:</p>
-<pre><code class="hljs">This is prose.
+<pre><code class="hljs">This <span class="hljs-keyword">is</span> prose.
 More prose.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="reset"></a><a href="#reset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>reset</code></h2>
@@ -223,21 +223,14 @@ import scala.concurrent._, duration._, mdoc.docs.executor
 <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
 ```
 </code></pre>
-<p>Error:</p>
-<pre><code class="hljs">error: modifiers<span class="hljs-selector-class">.md</span>:<span class="hljs-number">4</span>:<span class="hljs-number">1</span>: Futures timed out after [<span class="hljs-number">10</span> milliseconds]
-Await.result(Future(x), Duration(<span class="hljs-string">"10ms"</span>))
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-java<span class="hljs-selector-class">.lang</span><span class="hljs-selector-class">.ExceptionInInitializerError</span>
-    at repl.Session$.app(modifiers<span class="hljs-selector-class">.md</span>:<span class="hljs-number">3</span>)
-Caused by: java<span class="hljs-selector-class">.util</span><span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.TimeoutException</span>: Futures timed out after [<span class="hljs-number">10</span> milliseconds]
-    at scala<span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.impl</span><span class="hljs-selector-class">.Promise</span><span class="hljs-variable">$DefaultPromise</span>.ready(Promise<span class="hljs-selector-class">.scala</span>:<span class="hljs-number">259</span>)
-    at scala<span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.impl</span><span class="hljs-selector-class">.Promise</span><span class="hljs-variable">$DefaultPromise</span>.result(Promise<span class="hljs-selector-class">.scala</span>:<span class="hljs-number">263</span>)
-    at scala<span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.Await</span>$.<span class="hljs-variable">$anonfun</span><span class="hljs-variable">$result</span>$<span class="hljs-number">1</span>(package<span class="hljs-selector-class">.scala</span>:<span class="hljs-number">220</span>)
-    at scala<span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.BlockContext</span><span class="hljs-variable">$DefaultBlockContext</span>$.blockOn(BlockContext<span class="hljs-selector-class">.scala</span>:<span class="hljs-number">57</span>)
-    at scala<span class="hljs-selector-class">.concurrent</span><span class="hljs-selector-class">.Await</span>$.result(package<span class="hljs-selector-class">.scala</span>:<span class="hljs-number">146</span>)
-    at repl.Session<span class="hljs-variable">$App</span>$.&lt;init&gt;(modifiers<span class="hljs-selector-class">.md</span>:<span class="hljs-number">14</span>)
-    at repl.Session<span class="hljs-variable">$App</span>$.&lt;clinit&gt;(modifiers.md)
-    ... <span class="hljs-number">1</span> more
+<p>After:</p>
+<pre><code class="hljs">```scala
+import scala.concurrent._, duration._, mdoc.docs.executor
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
+<span class="hljs-comment">// x: Int = 1</span>
+<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
+<span class="hljs-comment">// res0: Int = 1</span>
+```
 </code></pre>
 <p>Use <code>:reset-class</code> to avoid the timeout exception.</p>
 <p>Before:</p>
