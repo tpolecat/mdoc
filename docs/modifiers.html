@@ -209,55 +209,40 @@ println(x)
 ```
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="reset-class"></a><a href="#reset-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>reset-class</code></h2>
-<p>The <code>:reset-class</code> modifier is like <code>:reset</code> except that it wraps the following
-statements in a class instead of an object. By default, statements are wrapped
-in an object but that encoding can cause problems such as deadlocks during
-initialization of multi-threaded code. See
-<a href="https://stackoverflow.com/questions/15176199/scala-parallel-collection-in-object-initializer-causes-a-program-to-hang">this StackOverflow answer</a>
-for a more detailed explanation.</p>
-<p>For example, the following program crashes by default with a timeout exception.</p>
+<p>This modifier works exactly the same way as <code>:reset</code> and is deprecated. Please
+use <code>:reset</code> instead.</p>
+<h2><a class="anchor" aria-hidden="true" id="reset-object"></a><a href="#reset-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>reset-object</code></h2>
+<p>The <code>:reset-object</code> modifier is similar to <code>:reset</code> except that it wraps the
+following statements in a object instead of a class. By default, statements are
+wrapped in an class but that encoding can cause problems compile errors such as</p>
+<ul>
+<li>&quot;Value class may not be a member of another class&quot;: happens when using
+<code>extends AnyVal</code></li>
+<li>&quot;The outer reference in this type test cannot be checked at run time&quot;: happens
+when pattern matching on sealed ADT.</li>
+</ul>
+<p>Example case where the default class wrapping does not compile:</p>
 <p>Before:</p>
 <pre><code class="hljs">```scala mdoc
-import scala.concurrent._, duration._, mdoc.docs.executor
-<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span>(<span class="hljs-params">val value: <span class="hljs-type">String</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">AnyVal</span></span>
 ```
 </code></pre>
-<p>After:</p>
-<pre><code class="hljs">```scala
-import scala.concurrent._, duration._, mdoc.docs.executor
-<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
-<span class="hljs-comment">// x: Int = 1</span>
-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
-<span class="hljs-comment">// res0: Int = 1</span>
-```
+<p>Error:</p>
+<pre><code class="hljs">error: modifiers.md:<span class="hljs-number">2</span>:<span class="hljs-number">1</span>: value <span class="hljs-keyword">class</span> <span class="hljs-symbol">may</span> <span class="hljs-symbol">not</span> <span class="hljs-symbol">be</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">member</span> <span class="hljs-symbol">of</span> <span class="hljs-symbol">another</span> <span class="hljs-symbol">class</span>
+<span class="hljs-symbol">final</span> <span class="hljs-symbol">case</span> <span class="hljs-symbol">class</span> <span class="hljs-symbol">Name</span>(<span class="hljs-symbol">val</span> <span class="hljs-symbol">value: <span class="hljs-symbol">String</span></span>) <span class="hljs-symbol">extends</span> <span class="hljs-symbol">AnyVal</span>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 </code></pre>
-<p>Use <code>:reset-class</code> to avoid the timeout exception.</p>
+<p>Use <code>:reset-object</code> to avoid these compile errors</p>
 <p>Before:</p>
-<pre><code class="hljs">```scala mdoc:reset-<span class="hljs-keyword">class</span>
-import scala.concurrent._, duration._, mdoc.docs.executor
-<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
+<pre><code class="hljs">```scala mdoc:reset-<span class="hljs-class"><span class="hljs-keyword">object</span></span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span>(<span class="hljs-params">val value: <span class="hljs-type">String</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">AnyVal</span></span>
 ```
 </code></pre>
 <p>After:</p>
 <pre><code class="hljs">```scala
-import scala.concurrent._, duration._, mdoc.docs.executor
-<span class="hljs-keyword">val</span> x = <span class="hljs-number">1</span>
-<span class="hljs-comment">// x: Int = 1</span>
-<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Await</span>.</span></span>result(<span class="hljs-constructor">Future(<span class="hljs-params">x</span>)</span>, <span class="hljs-constructor">Duration(<span class="hljs-string">"10ms"</span>)</span>)
-<span class="hljs-comment">// res1: Int = 1</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span>(<span class="hljs-params">val value: <span class="hljs-type">String</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">AnyVal</span></span>
 ```
 </code></pre>
-<p>Note that <code>:reset-class</code> does not support the some language constructs
-including:</p>
-<ul>
-<li>value classes: classes that extend <code>AnyVal</code> must be toplevel or enclosed in
-objects</li>
-<li>final classes: pattern matching against final inner classes causes &quot;The outer
-reference in this type test cannot be checked at run time.&quot; warnings under
-<code>-Xfatal-warnings</code>.</li>
-</ul>
 <h2><a class="anchor" aria-hidden="true" id="to-string"></a><a href="#to-string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>to-string</code></h2>
 <p>The <code>toString</code> modifier changes the pretty-printer for runtime values to use
 <code>Object.toString</code> instead of <a href="http://www.lihaoyi.com/PPrint/">PPrint</a>.</p>
@@ -500,7 +485,7 @@ Hello world!
 <p>After:</p>
 <pre><code class="hljs"><span class="hljs-keyword">BOOM
 </span></code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/changelog.html"><span class="arrow-prev">← </span><span>Changelog</span></a><a class="docs-next button" href="/mdoc/docs/js.html"><span>Scala.js</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent"><code>silent</code></a></li><li><a href="#fail"><code>fail</code></a></li><li><a href="#crash"><code>crash</code></a></li><li><a href="#passthrough"><code>passthrough</code></a></li><li><a href="#invisible"><code>invisible</code></a></li><li><a href="#reset"><code>reset</code></a></li><li><a href="#reset-class"><code>reset-class</code></a></li><li><a href="#to-string"><code>to-string</code></a></li><li><a href="#compile-only"><code>compile-only</code></a></li><li><a href="#scastie"><code>scastie</code></a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/mdoc/docs/changelog.html"><span class="arrow-prev">← </span><span>Changelog</span></a><a class="docs-next button" href="/mdoc/docs/js.html"><span>Scala.js</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#default">Default</a></li><li><a href="#silent"><code>silent</code></a></li><li><a href="#fail"><code>fail</code></a></li><li><a href="#crash"><code>crash</code></a></li><li><a href="#passthrough"><code>passthrough</code></a></li><li><a href="#invisible"><code>invisible</code></a></li><li><a href="#reset"><code>reset</code></a></li><li><a href="#reset-class"><code>reset-class</code></a></li><li><a href="#reset-object"><code>reset-object</code></a></li><li><a href="#to-string"><code>to-string</code></a></li><li><a href="#compile-only"><code>compile-only</code></a></li><li><a href="#scastie"><code>scastie</code></a></li><li><a href="#postmodifier">PostModifier</a></li><li><a href="#stringmodifier">StringModifier</a></li></ul></nav></div><footer class="nav-footer" id="footer" style="background-color:#7F4623"><section class="sitemap"><a href="/mdoc/" class="nav-home"><img src="/mdoc/img/mdoc-logo.png" alt="mdoc" width="66" height="58"/></a><div><h5>Docs</h5><a href="/mdoc/docs/installation.html">Get started</a></div><div><h5>Community</h5><a href="https://gitter.im/scalameta/mdoc" target="_blank">Chat on Gitter</a></div><div><h5>More</h5><a href="https://github.com/scalameta/mdoc" target="_blank">GitHub</a></div></section><section class="copyright">Copyright © 2019 mdoc developers</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
