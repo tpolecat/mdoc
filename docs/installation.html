@@ -235,7 +235,9 @@ Compiler options:
 
   <span class="hljs-comment">--classpath String (default: "")</span>
     Classpath <span class="hljs-keyword">to</span> <span class="hljs-keyword">use</span> <span class="hljs-keyword">when</span> compiling Scala code examples. Defaults <span class="hljs-keyword">to</span> the current
-    thread<span class="hljs-symbol">'s</span> classpath.
+    thread<span class="hljs-symbol">'s</span> classpath.You can <span class="hljs-keyword">use</span> Coursier<span class="hljs-symbol">'s</span> fetch command <span class="hljs-keyword">to</span> <span class="hljs-keyword">generate</span> the
+    classpath <span class="hljs-keyword">for</span> you:`<span class="hljs-comment">--classpath $(cs fetch --classpath</span>
+    org::artifact:version)`
 
   <span class="hljs-comment">--scalac-options String (default: "")</span>
     Compiler flags such as compiler plugins '-Xplugin:kind-projector.jar' <span class="hljs-keyword">or</span> custom
