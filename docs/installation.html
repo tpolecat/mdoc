@@ -176,7 +176,7 @@ contained, by default the <code>docs/</code> directory is used.</p>
 <p>Use <code>--site.VARIABLE=value</code> to add site variables that can be referenced from
 markdown as <code>@VARIABLE@</code>.</p>
 <pre><code class="hljs css language-diff"> coursier launch org.scalameta:mdoc_2.12:2.1.4 -- \
-<span class="hljs-addition">+  --site.SCALA_VERSION 2.12.10</span>
+<span class="hljs-addition">+  --site.SCALA_VERSION 2.12.11</span>
 </code></pre>
 <p>Use <code>--out</code> to customize the directory where markdown sources are generated, by
 default the <code>out/</code> directory is used.</p>
@@ -301,7 +301,7 @@ Less common options:
 <p>Add the following dependency to your build</p>
 <p><a href="https://maven-badges.herokuapp.com/maven-central/org.scalameta/mdoc_2.12"><img src="https://maven-badges.herokuapp.com/maven-central/org.scalameta/mdoc_2.12/badge.svg" alt="Maven Central"></a></p>
 <pre><code class="hljs css language-scala"><span class="hljs-comment">// build.sbt</span>
-scalaVersion := <span class="hljs-string">"2.12.10"</span> <span class="hljs-comment">// Any version in 2.12.x works.</span>
+scalaVersion := <span class="hljs-string">"2.12.11"</span> <span class="hljs-comment">// Any version in 2.12.x works.</span>
 libraryDependencies += <span class="hljs-string">"org.scalameta"</span> %% <span class="hljs-string">"mdoc"</span> % <span class="hljs-string">"2.1.4"</span>
 </code></pre>
 <p>Then write a main function that invokes mdoc as a library</p>
