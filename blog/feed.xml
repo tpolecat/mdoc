@@ -5,8 +5,8 @@
         <link>https://scalameta.org/mdoc/mdoc/blog</link>
         <description>The best place to stay up-to-date with the latest mdoc news and events.</description>
         <lastBuildDate>Mon, 30 Dec 2019 06:00:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-        <generator>Feed for Node.js</generator>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>mdoc Blog</title>
             <url>https://scalameta.org/mdoc/mdoc/img/mdoc-logo.png</url>
