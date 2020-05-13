@@ -302,12 +302,11 @@ Compiler options:
     org::artifact:version)`
 
   <span class="hljs-comment">--scalac-options String (default: "")</span>
-    Compiler flags such as compiler plugins '-Xplugin:kind-projector.jar' <span class="hljs-keyword">or</span> custom
-    options '-deprecated'. Formatted as a single <span class="hljs-built_in">string</span> <span class="hljs-keyword">with</span> space separated
-    values. <span class="hljs-keyword">To</span> pass multiple values: <span class="hljs-comment">--scalac-options "-Yrangepos -deprecated".</span>
-    Defaults <span class="hljs-keyword">to</span> the value <span class="hljs-keyword">of</span> <span class="hljs-symbol">'scalacOptions</span>' <span class="hljs-keyword">in</span> the <span class="hljs-symbol">'mdoc</span>.properties' resource
-    <span class="hljs-keyword">file</span>, <span class="hljs-keyword">if</span> any. <span class="hljs-keyword">When</span> using sbt-mdoc, update the `scalacOptions` sbt setting
-    instead <span class="hljs-keyword">of</span> passing <span class="hljs-comment">--scalac-options to `mdocExtraArguments`.</span>
+    Space separated list <span class="hljs-keyword">of</span> compiler flags such as '-Xplugin:kind-projector.jar
+    -deprecation -Yrangepos'. Defaults <span class="hljs-keyword">to</span> the value <span class="hljs-keyword">of</span> <span class="hljs-symbol">'scalacOptions</span>' <span class="hljs-keyword">in</span> the
+    <span class="hljs-symbol">'mdoc</span>.properties' resource <span class="hljs-keyword">file</span>, <span class="hljs-keyword">if</span> any. <span class="hljs-keyword">When</span> using sbt-mdoc, update the
+    `scalacOptions` sbt setting instead <span class="hljs-keyword">of</span> passing <span class="hljs-comment">--scalac-options to</span>
+    `mdocExtraArguments`.
 
   <span class="hljs-comment">--clean-target</span>
     Remove <span class="hljs-keyword">all</span> files <span class="hljs-keyword">in</span> the output directory before generating a <span class="hljs-keyword">new</span> site.
