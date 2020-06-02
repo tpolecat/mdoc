@@ -103,9 +103,9 @@ several steps:</p>
 <a href="http://static.javadoc.io/">http://static.javadoc.io/</a></li>
 </ul>
 <p>The static website gets generated in the <code>website/build</code> directory. You can copy
-these files over to any static HTTP server to host your website. A simple <code>sbt docs/clean</code>
-will delete the previous folder since the <code>DocusaurusPlugin</code> will also bind it to the
-standard SBT <code>clean</code> task.</p>
+these files over to any static HTTP server to host your website. A simple
+<code>sbt docs/clean</code> will delete the previous folder since the <code>DocusaurusPlugin</code>
+will also bind it to the standard SBT <code>clean</code> task.</p>
 <h2><a class="anchor" aria-hidden="true" id="publish-to-github-pages-locally"></a><a href="#publish-to-github-pages-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publish to GitHub pages locally</h2>
 <p>If you have a GitHub repository with a gh-pages branch, update <code>siteConfig.js</code>
 to include the following information:</p>
@@ -158,8 +158,8 @@ cat myproject.pub | xclip
 <a href="https://travis-ci.org/scalameta/mdoc/settings">https://travis-ci.org/scalameta/mdoc/settings</a>.</p>
 <p>Add the following values:</p>
 <ul>
-<li><code>GITHUB_DEPLOY_KEY</code>: the base64 encoded secret key. Note, the secret key is
-the file without the <code>.pub</code> extension
+<li><code>GITHUB_DEPLOY_KEY</code> or <code>GIT_DEPLOY_KEY</code>: the base64 encoded secret key. Note,
+the secret key is the file without the <code>.pub</code> extension
 <pre><code class="hljs css language-sh"><span class="hljs-comment"># macOS</span>
 cat myproject | base64 | pbcopy
 <span class="hljs-comment"># Ubuntu (assuming GNU base64)</span>
@@ -197,7 +197,9 @@ project.</p>
 <p>You're all set! Merge a PR to your project and watch the Travis job release the
 docs 😎</p>
 <h2><a class="anchor" aria-hidden="true" id="include-scaladoc-in-site"></a><a href="#include-scaladoc-in-site" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Include Scaladoc in site</h2>
-<p>You can configure a project to include Scaladocs in its site. Below is an example configuration that uses <a href="https://github.com/sbt/sbt-unidoc">sbt-unidoc</a> to aggregate Scaladocs across multiple projects.</p>
+<p>You can configure a project to include Scaladocs in its site. Below is an
+example configuration that uses <a href="https://github.com/sbt/sbt-unidoc">sbt-unidoc</a>
+to aggregate Scaladocs across multiple projects.</p>
 <pre><code class="hljs css language-diff"> // build.sbt
  lazy val docs = project
    .settings(
@@ -212,8 +214,12 @@ docs 😎</p>
 <span class="hljs-addition">+  .enablePlugins(MdocPlugin, DocusaurusPlugin, ScalaUnidocPlugin)</span>
    .dependsOn(myproject1, myproject2)
 </code></pre>
-<p>Make sure that you've added the <a href="https://github.com/sbt/sbt-unidoc#how-to-add-this-plugin">sbt-unidoc</a> dependency to <code>project/plugins.sbt</code>.</p>
-<p>Now the <code>docs/docusaurusCreateSite</code> command will generate Scaladocs in the <code>website/static/api</code> directory, which you'll probably want to add to your <code>.gitignore</code>:</p>
+<p>Make sure that you've added the
+<a href="https://github.com/sbt/sbt-unidoc#how-to-add-this-plugin">sbt-unidoc</a>
+dependency to <code>project/plugins.sbt</code>.</p>
+<p>Now the <code>docs/docusaurusCreateSite</code> command will generate Scaladocs in the
+<code>website/static/api</code> directory, which you'll probably want to add to your
+<code>.gitignore</code>:</p>
 <pre><code class="hljs css language-diff">  // .gitignore
   website/translated_docs
   website/build/
@@ -223,7 +229,8 @@ docs 😎</p>
   !website/i18n/en.json
 <span class="hljs-addition">+ website/static/api</span>
 </code></pre>
-<p>You'll need to tweak your <code>siteConfig.js</code> file to make Docusaurus play nicely with Scaladoc's CSS. You may want to add a header link to your API docs too:</p>
+<p>You'll need to tweak your <code>siteConfig.js</code> file to make Docusaurus play nicely
+with Scaladoc's CSS. You may want to add a header link to your API docs too:</p>
 <pre><code class="hljs css language-diff">  // website/siteConfig.js
 <span class="hljs-addition">+ const baseUrl = '/my-project/' // Base URL for your project */</span>
 
